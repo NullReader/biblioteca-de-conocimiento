@@ -1,0 +1,48 @@
+/* Scroll ================================================= */
+
+/* Contenedor de la ventana */
+.code-window {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 300px;
+}
+
+/* Zona del contenido (visible) */
+.code-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* El que maneja el scroll horizontal + vertical */
+.code-scroll {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+}
+
+/* Scroll horizontal (y vertical) estilizado */
+.code-scroll::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.code-scroll::-webkit-scrollbar-track {
+  background: #1a1a1a2f;
+  border-radius: 4px;
+}
+
+.code-scroll::-webkit-scrollbar-thumb {
+  background-color: #ff436c;
+  border-radius: 4px;
+}
+
+.code-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #b3acae;
+}
+
+/* Firefox */
+.code-scroll {
+  scrollbar-color: #ff436c #1a1a1a1e;
+}

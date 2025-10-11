@@ -1,0 +1,128 @@
+/* Footer ======================================== */
+
+/* Contenedor --- */
+
+.footer-container {
+    margin: 0 25px;
+    backdrop-filter: blur(2px);
+    border-radius: 15px 15px 0 0;
+    background-color: #ffffff14;
+    border-top: 2px solid #ffffff26;
+    filter: drop-shadow(0px 0px 3px #00000080);
+
+}
+
+.footer {
+  margin-top: 80px;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+  color: var(--blanco);
+  padding: 40px 20px 40px;
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+
+padding-bottom: 50px;
+}
+
+.footer-contenido {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  width:auto;
+
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1700px;
+  margin: 0 50px 0 50px;
+  text-align: center;
+  align-items: center;
+}
+
+.footer-logo {
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logotipo {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.5));
+  transition: all 0.3s ease-in-out;
+  filter: invert(100%);
+  opacity: calc(70%);
+
+  &:hover {
+    opacity: calc(100%);
+  }
+}
+
+.footer-logo h2 {
+  font-size: 60px;
+  font-family: "Tituloszz",sans-serif;
+  line-height: 1;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  color: #ffffff80;
+
+  &:hover {
+    color: var(--blanco)
+  }
+}
+
+.footer-logo span {
+  position: relative;
+    top: 4px
+}
+
+.footer-links, .footer-social {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    opacity: calc(0);
+}
+
+.footer-links a,
+.footer-social a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: #ffd6cc;
+  transform: scale(1.1);
+}
+
+.footer-copy {
+  cursor: default;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  
+}
+
+.footer-copy {
+  padding-bottom: 10px;
+}
+
+.footer-copy p {
+  margin: 0;
+  color: var(--blanco);
+}

@@ -4,20 +4,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./iconos/logotipo.svg">
     <link rel="stylesheet" href="./css/styles.css">
     <title>Inicio</title>
 </head>
 
 <body>
-    <section>
-        <div class="caja">
-            <p>Caja 1</p>
+    <header>
+        <nav class="navbar">
+            <a href="#">
+                <div class="logo-container">
+                    <img class="logotipo" src="./iconos/logotipo.svg" alt="">
+                    <h1 class="titulo"><span>B.D.C</span></h1>
+                </div>
+            </a>
+
+            <div class="buscador">
+                <form class="search-field" id="search" name="search" action="/buscar" method="get">
+                    <input class="search-input" type="text" placeholder="Buscar...">
+                    <button class="search-button" type="submit">Buscar</button>
+                </form>
+
+                <button class="search-toggle" id="searchToggle">
+                    🔍
+                </button>
+            </div>
+
+            <!-- Botón Hamburguesa -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links">
+                <ul class="nav-list">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="./pages/libro-html.html">HTML</a></li>
+                    <li><a href="./pages/libro-css.html">CSS</a></li>
+                    <li><a href="./pages/libro-js.html">JS</a></li>
+                </ul>
+            </div>
+            <div class="invisible-box"></div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-inner" id="carousel">
+
+                        <div class="carousel-item active slide-welcome">
+                            <div class="slide-content">
+                                <h2>Hola Mundo</h2>
+                                <p>Te encuentras actualmente en nuestra Biblioteca De Conocimiento</p>
+                                <div class="icon">🌍</div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item slide-html">
+                            <div class="slide-content">
+                                <h3>HTML</h3>
+                                <p>Aprende a estructurar la web con etiquetas semánticas.</p>
+                                <div class="icon"> &lt;/&gt; </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item slide-css">
+                            <div class="slide-content">
+                                <h3>CSS</h3>
+                                <p>Dale estilo a tus proyectos con diseño moderno y adaptable.</p>
+                                <div class="icon">🎨</div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item slide-js">
+                            <div class="slide-content">
+                                <h3>JavaScript</h3>
+                                <p>Haz tu web interactiva y dinámica con funciones, eventos y animaciones.</p>
+                                <div class="icon">🧩</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Sección de Bienvenida -->
+        <section class="bienvenida">
+            <div class="bienvenida-content">
+                <h2>Bienvenido</h2>
+                <p>
+                    Aquí encontrarás todo lo que voy aprendiendo sobre <strong>HTML</strong>,
+                    <strong>CSS</strong> y <strong>JavaScript</strong>.
+                    Cada tema tiene explicaciones claras y ejemplos visuales para que te resulte mas sencillo de comprenderlas.
+                </p>
+            </div>
+        </section>
+
+        <!-- Tarjetas de Acceso Rápido -->
+        <section class="tarjetas">
+            <div class="tarjeta">
+                <div class="icono">📄</div>
+                <h3>HTML</h3>
+                <p>Estructura la web con etiquetas semánticas.</p>
+                <a href="./pages/libro-html.html" class="btn">Explorar</a>
+            </div>
+
+            <div class="tarjeta">
+                <div class="icono">🎨</div>
+                <h3>CSS</h3>
+                <p>Dale estilo a tus proyectos con diseños modernos.</p>
+                <a href="./pages/libro-css.html" class="btn">Explorar</a>
+            </div>
+
+            <div class="tarjeta">
+                <div class="icono">🧩</div>
+                <h3>JavaScript</h3>
+                <p>Haz tu web dinámica con funciones e interactividad.</p>
+                <a href="./pages/libro-js.html" class="btn">Explorar</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-contenido">
+                <div class="footer-logo">
+                    <img src="./iconos/logotipo.svg" alt="logo" class="footer-logotipo">
+                    <h2><span>B.D.C</span></h2>
+                </div>
+
+                <nav class="footer-links">
+                    <a href="#">Inicio</a>
+                    <a href="./pages/libro-html.html">HTML</a>
+                    <a href="./pages/libro-css.html">CSS</a>
+                    <a href="./pages/libro-js.html">JS</a>
+                </nav>
+
+                <div class="footer-social">
+                    <a href="#" target="_blank">🐙 GitHub</a>
+                    <a href="#" target="_blank">💼 LinkedIn</a>
+                    <a href="#" target="_blank">✉️ Contacto</a>
+                </div>
+            </div>
+
+            <div class="footer-copy">
+                <p class="ej-n">Hecho con paciencia y café ☕ | © 2025 Biblioteca De Conocimiento</p>
+            </div>
         </div>
-        <div class="caja">
-            <p>Caja 2</p>
-        </div>
-    </section>
-    <script src="./js/scripts.js"></script>
+    </footer>
+
+    <!-- Scripts de la pagina -->
+    <script src="./js/nav.js"></script>
+    <script src="./js/carrusel.js"></script>
 </body>
 
 </html>

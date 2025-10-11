@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../iconos/logotipo.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Libro CSS</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../">
+                <div class="logo-container">
+                    <img class="logotipo" src="../iconos/logotipo.svg" alt="">
+                    <h1 class="titulo"><span>B.D.C</span></h1>
+                </div>
+            </a>
+
+            <div class="buscador">
+                <form class="search-field" id="search" name="search" action="/buscar" method="get">
+                    <input class="search-input" type="text" placeholder="buscar...">
+                    <button class="search-button" type="submit">Buscar</button>
+                </form>
+
+                <button class="search-toggle" id="searchToggle">
+                    🔍
+                </button>
+            </div>
+
+            <!-- Botón Hamburguesa -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links">
+                <ul class="nav-list">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../pages/libro-html.html">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="../pages/libro-js.html">JS</a></li>
+                </ul>
+            </div>
+            <div class="invisible-box"></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="classroom-container">
+            <div class="classroom-content">
+                <h2>No Se Encontró Ningun Contenido</h2>
+                <p>
+                    Todavia no hay nada escrito en esta pagina, 
+                    porfavor, regrese en otro momento.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-contenido">
+                <div class="footer-logo">
+                    <img src="../iconos/logotipo.svg" alt="logo" class="footer-logotipo">
+                    <h2>B.D.C</h2>
+                </div>
+
+                <nav class="footer-links">
+                    <a href="../index.html">Inicio</a>
+                    <a href="../pages/libro-html.html">HTML</a>
+                    <a href="../pages/libro-css.html">CSS</a>
+                    <a href="../pages/libro-js.html">JS</a>
+                </nav>
+
+                <div class="footer-social">
+                    <a href="#" target="_blank">🐙 GitHub</a>
+                    <a href="#" target="_blank">💼 LinkedIn</a>
+                    <a href="#" target="_blank">✉️ Contacto</a>
+                </div>
+            </div>
+
+            <div class="footer-copy">
+                <p>Textito de copyright, porque si xd | © 2025 Biblioteca De Conocimiento</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de la pagina -->
+    <script src="../js/scripts.js"></script>
+</body>
+
+</html>

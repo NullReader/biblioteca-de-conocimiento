@@ -1,0 +1,29 @@
+/* Tipografias ======================================= */
+
+@font-face {
+    font-family: Tituloszz;
+    src: url("../fonts/CedarHeaven-Decoration.ttf") format("truetype"),
+    url("../fonts/CedarHeaven-Decoration.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: linksN;
+    src: url("../fonts/home-office.ttf") format("ttf"),
+    url("../fonts/home-office.otf") format("otf"),
+    url("../fonts/home-office.woff") format("woff"),
+    url("../fonts/home-office.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: TituloArticulo;
+    src: url("../fonts/Fashion-Fetish-Small-Caps.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: TextoArticulo;
+    src: url();
+}

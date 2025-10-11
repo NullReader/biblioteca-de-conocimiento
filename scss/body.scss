@@ -1,7 +1,49 @@
+/* Body =========================================== */
+
 * {
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #90A1B9;
-    }
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px;
+    background-color: var(--body-bg);
+    background-image: url(../imagenes/1330484.png);
+    //background-image: url(../imagenes/31367.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+}
+
+h1 {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }

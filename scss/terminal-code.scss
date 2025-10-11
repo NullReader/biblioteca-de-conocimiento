@@ -1,0 +1,121 @@
+/* Ventanas de código y preview ============================ */
+
+/* Contenedor principal */
+.preview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Cuando hay vista previa (dos ventanas lado a lado) */
+.preview-container.has-preview {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+/* Ventanas individuales */
+.code-window,
+.preview-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #1e1e1e79;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 360px;
+}
+
+/* Encabezado (nombre de archivo, etc.) */
+.preview-header {
+  background: #2c2c2c;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;        /* 🔥 centra verticalmente */
+  justify-content: space-between; /* separa filename y botón */
+  background: #2c2c2c;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-family: monospace;
+  border-bottom: 1px solid #333;
+  position: relative;
+}
+
+.code-header .filename {
+  flex: 1;
+  text-align: center;         /* 🔥 lo deja centrado incluso con el botón al lado */
+  font-weight: 500;
+}
+
+
+
+/* Vista previa (iframe tipo navegador) */
+.preview-frame {
+  flex: 1;
+  border: none;
+  background: #fff;
+}
+
+/* Cuando hay solo una ventana: centrarla y limitar el ancho */
+.preview-container:not(.has-preview) {
+  display: grid;
+  place-items: center;
+}
+
+.preview-container:not(.has-preview) .code-window {
+  width: 100%;
+  max-width: 507px; /* ajusta según tu diseño */
+}
+
+/* Botón de copiar codigo --- */
+/* Estilos para el botón de copiar */
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: #424242;
+    border-radius: 5px;
+  }
+
+  /* Estilos para los íconos dentro del botón */
+  img {
+    width: 18px;
+    height: 18px;
+    stroke: #ffffff;
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Oculta el ícono de "correcto" por defecto */
+  .icon-check {
+    display: none;
+  }
+
+  /* Cuando el botón tiene la clase 'copied'... */
+  &.copied {
+    /* ...oculta el ícono de copiar */
+    .icon-copy {
+      display: none;
+    }
+    /* ...y muestra el ícono de correcto */
+    .icon-check {
+      display: block;
+    }
+  }
+}

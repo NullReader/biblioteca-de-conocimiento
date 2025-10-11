@@ -1,0 +1,2289 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../iconos/logotipo.svg">
+    <link href="../css/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Libro HTML</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html">
+                <div class="logo-container">
+                    <img class="logotipo" src="../iconos/logotipo.svg" alt="">
+                    <h1 class="titulo"><span>B.D.C</span></h1>
+                </div>
+            </a>
+
+            <div class="buscador">
+                <form class="search-field" id="search" name="search" action="/buscar" method="get">
+                    <input class="search-input" type="text" placeholder="Buscar...">
+                    <button class="search-button" type="submit">Buscar</button>
+                </form>
+
+                <button class="search-toggle" id="searchToggle">
+                    🔍
+                </button>
+            </div>
+
+            <!-- Botón Hamburguesa -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links">
+                <ul class="nav-list">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="../pages/libro-css.html">CSS</a></li>
+                    <li><a href="../pages/libro-js.html">JS</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="classroom-container">
+            <div class="classroom-content">
+                <h2>INTRODUCCION AL HTML</h2>
+                <p>
+                    El HyperText Markup Language, o Lenguaje de Marcado de Hipertexto (HTML)
+                    es el lenguaje fundamental y el estandar para estructurar y organizar el contenido de una pagina
+                    web.
+                </p>
+                <p>
+                    Cuando Empezamos a programar, tenemos que hacerlo en algun lugar donde podamos escribir codigo,
+                    por ejemplo lo podriamos hacer en un documento de texto (pero eso es de psicopatas)
+                    para eso descargaremos un editor de texto, en mi caso yo recomiendo <a target="_blank"
+                        href="https://code.visualstudio.com/download">VSCode</a>.
+                </p>
+                <p>
+                    Cuando tengamos listo nuestro editor, crearemos nuestro proyecto que funciona como siempre,
+                    creamos una carpeta para colocar nuestros archivos, imagenes, etc.
+                </p>
+                <p>
+                    Una vez tengamos la carpeta de nuestro proyecto crearemos nuestro primer archivo el cual llamaremos
+                    "index.html,"
+                    El "index.html" es un archivo esencial para una pagina web, cuando nuestra pagina es cargada en un
+                    servidor,
+                    el navegador buscará automaticamente el index para cargarlo, por eso es usada como la pagina
+                    principal y tambien como algo escencial,
+                    el no tener este archivo generará ur error 404.
+                </p>
+                <p>
+
+                    Para nombrar archivos para nuestra pagina es muy importante tener varias cosas en cuenta,
+                    primero que nada no tienen que tener mayusculas, segundo no tienen que tener acentos como " ´ ` " y
+                    tampoco deben de haber espacios,
+                    en vez de espacios siempre usen barra o barra baja ya que esto es mas semantico (Mas adelante
+                    hablaremos de que es la semantica).
+                </p>
+                <p>
+                    Ahora empezaremos a escribir codigo pero antes una breve explicacion,
+                    el HTML está compuesto por 3 componentes; Etiqueta, Atributo y Valor, existen dos tipos de
+                    etiquetas,
+                    las de "Apretura y Cierre" y las de "AutoCierre" este ultimo tipo de etiqueta lo veremos mas
+                    adelante.
+                </p>
+                <p>
+                    EJEMPLO DE TIPO DE ETIQUETA:
+                </p>
+
+                <div class="preview-container">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html typewriter">
+&lt;etiqueta&gt;
+    Soy una etiqueta con apertura y cierre
+&lt;/etiqueta&gt;
+
+&lt;etiqueta&gt;Soy una etiqueta con autocirerre
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="classroom-container">
+            <div class="classroom-content">
+                <h2>USOS DE ETIQUETAS, Y introduccion al BODY Y HEAD</h2>
+                <P>
+                    Cuando empezamos a escribir en html primero tendremos que escribir lo siguiente;
+                </P>
+                <div class="preview-container">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html typewriter">
+&lt;!DOCTYPE html&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    a simple vista pareciese que es una etiqueta de AutoCierre,
+                    sin embargosto no es una etiqueta, sino que es una declaración que se coloca al principio
+                    de un documento web para informar al navegador qué versión de HTML se está utilizando,
+                    especificamente esta declaración declara que se usará la version estandar de HTML, especificamente
+                    HTML5.
+                </p>
+                <p>
+                    Una vez colocada esta declaración procederemos a colocar nuestra primera etiqueta la cual será la
+                    siguiente:
+
+                </p>
+                <div class="preview-container">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html typewriter">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    Contenido
+&lt;/html&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Dentro de esta etiqueta se escribirá todo el lenguaje HTML que escribiremos a partir de Ahora.
+                </p>
+                <hr>
+                <p>
+                    Dentro de esta etiqueta irán dos de las etiquetas mas importantes, que son "head" y "body":
+                </p>
+                <div class="preview-container">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html typewriter">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        Contenido
+    &lt;/head&gt;
+    &lt;body&gt;
+        Contenido
+    &lt;/body&gt;
+&lt;/html&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Estas dos etiquetas cumplen funciones opuestas pero a la vez relacionadas,
+                    por un lado tenemos el "head" en el cual nosotros escribiremos codigo que no será visible en nuestra
+                    pagine web,
+                    y por otro lado tenemos el body en el cual escribiremos codigo que si será mostrado por nuestra web.
+
+                </p>
+                <p>
+                    Un ejemplo de esto es la etiqueta "title" la cual se escribe en el head,
+                    como su nombre indica, esta etiqueta sirve para escribir el titulo de esa pagina,
+                    sin embargo, el titulo no se mostrará en la pagina como tal, sino que se podrá ver en el nombre de
+                    la pestaña del navegador.
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Esto es un titulo&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        
+    &lt;body&gt;
+&lt;/html&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Esto es un titulo</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Bien, ahora empezaremos armando nuestra primera estructura completa de una pagina web,
+                    para eso en nuestro <a>VSCode</a> escribiremos el simbolo "!" y presionamos la tecla "Tab"
+                    Esto hará que se genere rapidamente una estructura HTML lo que ahorra tiempo:
+                </p>
+                <div class="preview-container">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        
+    &lt;body&gt;
+&lt;/html&gt;
+                            </code></pre>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Ahora aqui veremos nuestras primeras propiedades junto con sus valores,
+                    la primera propiedad que veremos será la de "lang" que se encuentra en la etiqueta "html"
+                    como podrán intuir la propiedad "lang" es para el lenguaje, en este caso viene en ingles,
+                    osea se leeria de la siguiente forma "idioma = ingles" en codigo "lang="en"", los valores siempre
+                    irán
+                    dentro de comillas "valor" asi como la propiedad tendrá un simbolo de igual ya que, la propiedad es
+                    igual al valor dado.
+                </p>
+                <p>
+                    La propiedad "lang" indica el idioma en el que se encontrará la pagina, en si el tener el idioma
+                    incorrecto no afecta en nada al codigo,
+                    sin embargo esta etiqueta ayuda a los motores de busqueda a encontrar mas facilmente tu pagina,
+                    las otras propiedades que se muestran ahi las explicaremos en otro momento cuando expliquemos el
+                    funcionamiento de la etiqueta "&lt;meta&gt;".
+                </p>
+                <p>
+                    Ahora pasaremos a la parte del "body", como ya dijimos antes, en la etiqueta body
+                    irá todo el contenido visible de la pagina, titulos, parrafos, formularios, etc.
+                </p>
+                <p>
+                    Empezaremos con algo sencillo el cual es el titulo, para los titulos se usará la etiqueta <br>
+                    "&lt;h1&gt; Contenido &lt;/h1&gt;" esta etiqueta pertenece a un grupo llamado
+                    "heading tags" o "etiquetas de encabezado" en español, esta etiqueta va del "h1" al "h6"
+                    esta etiqueta es usada para titulos, sub titulos, sub-sub titulos, etc.
+                    Ahora, como es tradicion en el mundo del desarrollo web, escribiremos nuestro primer "Hola Mundo",
+                    para eso colocaremos la etiqueta "&lt;h1&gt; Contenido &lt;/h1&gt;" y dentro en contenido escribimos
+                    "Hola mundo"
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hola Mundo&lt;/h1&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Con esto oficialmente habrás escrito tu primer "Hola Mundo".
+                </p>
+            </div>
+        </section>
+        <section class="classroom-container">
+            <div class="classroom-content">
+                <h2>
+                    Usos de las "etiquetas de encabezado" y parrafos
+                </h2>
+                <p>
+                    La forma correcta de usar estas etiquetas es la siguiente; Primero crearemos una seccion debajo de
+                    nuestro titulo,
+                    para crear una seccion lo haremos con la etiqueta "&lt;section&gt; &lt;/section&gt;" esta etiqueta,
+                    como es obvio,
+                    se usa para hacer diferentes secciones, ahora para darle un titulo a la seccion, ya no lo haremos
+                    con la etiqueta "H1",
+                    sino que esta vez usaremos un "H2" okay, ahora vamos a crear algun parrafo en la seccion,
+                    para crear un parrafo lo haremos con la etiqueta "&lt;p&gt; &lt;/p&gt;"
+                </p>
+                <p>
+                    EJEMPLO;
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Titulo de mi Pagina con H1&lt;/h1&gt;
+        &lt;section&gt;
+            &lt;h2&gt;Titulo de mi seccion con H2&lt;/h2&gt;
+            &lt;p&gt;
+                Esto es un parrafo creado para rellenar la estructira
+                de esta pagina para mostrar de ejemplo visualmente
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;h2&gt;Esta es otra seccion con H2&lt;/h2&gt;
+            &lt;p&gt;
+                Esto es un parrafo creado para rellenar la estructira
+                de esta pagina para mostrar de ejemplo visualmente
+            &lt;/p&gt;
+        &lt;/section&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Ahora cada vez que generemos una nueva seccion, usaremos un "H2" para titularla,
+                    sin embargo en caso de que querramos colocar otro titulo en la misma seccion, lo haremos con un "H3"
+                    esta seria la forma correcta de usar las "Etiquetas de encabezado"
+                </p>
+            </div>
+        </section>
+        <section class="classroom-container">
+            <div class="classroom-content">
+                <h2 id="listas">Tipos De Textos</h2>
+                <p>
+                    Esta será una seccion bastante corta ya que son unos conceptos faciles de explicar.
+                    Las etiquetas con las que hablaremos son 4 etiquetas, primero tenemos la etiqueta "b"
+                    esta etiqueta se usa para hacer los textos en negrita, la letra b como etiqueta viene de "black",
+                    despues tenemos la etiqueta "i" la cual sirve para hacer los textos en italica,
+                    despues tenemos la etiqueta "strike" la cual se usa para tachar un texto, y por ultimo
+                    tenemos la etiqueta "small" la cual se usa para colocar los textos en chiquita.
+                </p>
+                <p>
+                    Estas etiquetas se deben de usar dentro de etiquetas de texto, ya sea en las de encabezado o en
+                    parrafos,
+                    puedes marcar una sola palabra o todo el texto, eso ya es a tu eleccion
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;section&gt;
+            &lt;p&gt;
+                &lt;b&gt;
+                    Esto es un texto en Negrita
+                &lt;/b&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;i&gt;
+                    Esto es un texto en Italica
+                &lt;/i&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;strike&gt;
+                    Esto es un texto Tachado
+                &lt/strike&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;small&gt;
+                    Esto es un texto en Chiquita
+                &lt;/small&gt;
+            &lt;/p&gt;
+        &lt;/section&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="classroom-container">
+            <div class="classroom-content">
+                <h2>Listas</h2>
+                <p>
+                    Existen dos tipos de listas, las ordenadas y las no ordenadas,
+                    para las listas ordenadas se usará la etiqueta <br>"&lt;ol&gt; &lt;/ol&gt;"
+                    y para las no ordenadas se usará la etiqueta "&lt;ul&gt; &lt;/ul&gt;", ademas
+                    dentro de la etiqueta "ol" o "ul" se usará la etiqueta "&lt;li&gt; &lt;/li&gt;",
+                    para hacerlo mas facil usaré la siguiente analogia para explicarlo,
+                    digamos que tenemos una hoja con la lista de la compra, bueno, esa hoja digamos que son
+                    las etiquetas "ol" o "ul" dentro de esa hoja estará la lista de la compra, la etiqueta "li"
+                    representará esa lista,
+                    ahora digamos que esa lista en realidad es un manual de instrucciones, si tuviesemos una lista
+                    ordenada,
+                    significaria que tendriamos que seguir el orden de la lista para armar el contenido del manual,
+                    sin embargo si tenemos una lista no ordenada, quiere decir que da igual por donde empecemos en esa
+                    lista,
+                    no será relevante el orden de la misma, las listas, especificamente las no ordenadas se suelen usar
+                    para los links del nav.
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Mi pagina web&lt;/h1&gt;
+        &lt;section&gt;
+            &lt;h2&gt;Tipos de listas&lt;/h2&gt;
+            &lt;h3&gt;Lista ordenada&lt;/h3&gt;
+            &lt;ol&gt;
+                &lt;li&gt;Ingresa a nuestro sitio web&lt;/li&gt;
+                &lt;li&gt;Haz click en acceso a cliente&lt;/li&gt;
+                &lt;li&gt;ingresa los datos solicitados&lt;/li&gt;
+            &lt;/ol&gt;
+
+            &lt;h3&gt;Lista no ordenada&lt;/h3&gt;
+            &lt;h4&gt;Ingredientes de receta&lt;/h4&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Dos cebollas&lt;/li&gt;
+                &lt;li&gt;Aceite&lt;/li&gt;
+                &lt;li&gt;Una docena de huevos&lt;/li&gt;
+                &lt;li&gt;Harina&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="classroom-container">
+            <div class="classroom-content">
+                <h2>Links</h2>
+                <p>
+                    Para el uso de links usaremos la etiqueta "&lt;a&gt; &lt;/a&gt;"
+                    esta etiqueta la tendremos que usar con el atributo <br>" href="" "
+                    dentro de las comillas colocaremos el link o la ruta del archivo html al que querramos dirigirnos,
+                    despues dentro entre medio de las etiquetas "a" colocaremos el titulo para hacerle click, Ejemplo:
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;a href="https://www.google.com/"&gt;Link Externo&lt;/a&gt;
+        &lt;br&gt;
+        &lt;a href="ejemplo.html"&gt;Link Interno&lt;/a&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Como podrán observar en el ejemplo del codigo, hay una etiqueta llamada "br"
+                    y como tambien habrán notado, es una etiqueta de auto cirerre, esta etiqueta
+                    la veremos mas adelante, tambien mas adelante hablaremos mas en profundidad hacerca
+                    de como usar links para archivos internos
+                </p>
+                <p>
+                    Bueno, siguiendo con la explicacion de la etiqueta "a" tenemos otra propiedad bastante util
+                    para los links, la cual es "target=" la propiedad "target" junto con el valor "_blank" hace
+                    que al dar click en el link, se habra en una nueva ventana, esto puede resultar bastante util segun
+                    el contexto en que las uses, en mi caso en esta pagina esta propiedad la coloqué en los links
+                    externos
+                    del footer, tambien en el link del comienzo para descargar "VSCode" y muchos lo suelen colocar en
+                    las malditas ventanas emergentes que algunas paginas tienen, me gustaria colocar un ejemplo visual
+                    pero la ventana de visualizacion de ejemplo no me permite demasiado, asi que solo colocare la
+                    ventana de
+                    ejemplo de codigo:
+                </p>
+                <div class="preview-container">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html typewriter">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;a href="ejemplo.html" target="_blank"&gt;Botón&lt;/a&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Bien, siguiendo con los links, digamos que tenemos un botón para ir al
+                    inicio de nuestra pagina, sin embargo nosotros ya nos encontramos en el inicio
+                    si la clickeamos lo que ocurrirá es que el navegador volverá a cargar todo el contenido
+                    de la pagina de nuevo, y esto hará que el usuario tenga una recarga innecesaria de la pagina,
+                    asi que nosotros en vez de colocar la ruta del archivo, lo que haremos será colocar un "#"
+                    esto hará que cuando la pagina refresque, ya deje todo lo cargado anteriormente
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;a href="#"&gt;Botón&lt;/a&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Tambien podriamos redirigirnos hacia una seccion en concreto en esta misma pagina
+                    por ejemplo a la seccion de <a href="#listas">Listas</a> esto se hace a traves de
+                    una "id" las "id" son un atributo que veremos mas adelante ya que tiene muchos usos
+                    pero en este caso lo usaremos para marcar una etiqueta en especifico,
+                    lo que haremos será colocarle el atributo "id" a una etiqueta, en el ejemplo que di hace unos
+                    momentos la usé en la etiqueta "h2" y despues en el valor colocamos el id, el id puede ser un nombre
+                    o lo que sea,
+                    pero algo muy importante que deben de saber es que el valor de un "id" Nunca, se debe repetir,
+                    siempre es un "id" unico para cada etiqueta, bueno, cuando ya colocamos el id a la etiqueta a la
+                    cual
+                    nos queremos redirigir, queda vincular un "a" a esa id, para eso colocamos en vez de un link interno
+                    en el "href"
+                    lo que haremos será colocarle un "#" como hicimos para que no refresque, y despues colocamos el
+                    nombre de la "id"
+                    de esa forma ya estarian vinculados
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;a href="#viajar" id="arriba"&gt;Ir abajo del todo de la pagina&lt;/a&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;h1 id="viajar"&gt;Te encuentras en el final de la pagina&lt;/h1&gt;
+        &lt;a href="#arriba"&gt;volver al inicio&lt;/a&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="classroom-container">
+            <div class="classroom-content">
+                <h2>Etiquetas extras</h2>
+                <p>
+                    Ahora hablaremos rapidamente de algunas etiquetas que tienen funcionalidades mas simples
+                    y que no requieren de tanta explicacion, esto para mas bien para tener una seccion un poco mas
+                    ligera
+                    antes de pasar a la seccion de formularios la cual es una seccion bastante extensa.
+                </p>
+                <hr>
+                <h3>Objetos en bloque y en linea</h3>
+                <p>
+                    Antes de pasar a las etiquetas les quiero hablar del concepto de
+                    objetos en bloque y objetos en linea, que pasaria si colocamos en el codigo dos links
+                    uno ensima del otro, se veran tambien uno ensima del otro en el navegador?
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;a href="#"&gt;Link dos&lt;/a&gt;
+        &lt;a href="#"&gt;Link uno&lt;/a&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Como pueden observar los objetos se encuentran uno al lado del otro a pesar de que
+                    los escribimos uno debajo del otro en el codigo, esto se debe a que la etiqueta "a"
+                    es un objeto en linea, que significa un objeto en linea? un objeto en linea quiere decir
+                    que ocupará el mismo ancho que su propio contenido, por lo que al no ocupar todo el ancho se
+                    colocarán
+                    uno al lado del otro, ahora veamos como se comportan dos "p" que ocurre si escribimos dos "p" de la
+                    misma
+                    forma que hicimos con los "a" sin embargo, esta vez colocaremos las etiquetas una al lado de la otra
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;a href="#"&gt;Link dos&lt;/a&gt;
+        &lt;a href="#"&gt;Link uno&lt;/a&gt;
+
+        &lt;p&gt;Este es el primer parrafo&lt;/p&gt; &lt;p&gt;Este es el segundo parrafo&lt;/p&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Como pueden observar, a pesar de que colocamos los parrafos uno al lado del otro, estos si que
+                    pasaron
+                    a estar uno debajo del otro, a pesar de que tenian mucho espacio en la pantalla para colocarse uno
+                    al lado del otro,
+                    esto se debe a que los "p" son objetos en bloque, que quiere decir esto? significa que da igual el
+                    tamaño del contenido del objeto
+                    el objeto siempre ocupará todo el ancho de la pantalla, por eso al no tener espacio el otro "p" pasa
+                    a colocarse debajo.
+                </p>
+                <p>
+                    Cada etiqueta tiene una propiedad de "block (objeto en bloque)" o "in-line (objeto en linea)"
+                    estas propiedades pueden ser cambiadas con css, lo cual veremos sus usos en <a
+                        href="./libro-css.html">CSS</a>.
+                </p>
+                <p>
+                    Bueno, ya hemos hablado de las etiquetas, pero que ocurre con el comportamiento de sus contenidos?
+                    para eso
+                    colocaremos de nuevo dos "p" uno debajo del otro para mayor comodidad y procederemos a
+                    escribir un contenido en columna, ejemplo:
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            Este es
+             el primer
+              parrafo
+        &lt;/p&gt;
+        &lt;p&gt;
+            Este es
+             el segundo
+              parrafo
+        &lt;/p&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Como pudieron observar el texto sigue exactamente igual a pesar de que los colocamos debajo
+                    esto se debido a que el colocar un texto debajo no afectará el contenido.
+                </p>
+                <p>
+                    Habiendo explicado el concepto de los objetos "block" e "inline" pasaremos a la otra seccion.
+                </p>
+                <hr>
+                <h3>Etiquetas de Auto Cierre</h3>
+                <p>
+                    El concepto de una etiqueta de auto cierre es bastante simple, simplemente es una etiqueta que no
+                    contiene un cierre, anteriormente
+                    las etiquetas de autocierre se solian escribir asi "&lt;etiqueta/&gt;" sin embargo en la actual
+                    version estandar esto ya no es necesario y
+                    simplemente se escribe asi "&lt;etiqueta&gt;" una etiqueta que vimos por un momento en una de las
+                    secciones anteriores es la etiqueta
+                    "line break" o en español "salto de linea", como vimos anteriormente, en un parrafo no puedes seguir
+                    escribiendo debajo simplemente escribiendo debajo en el codigo
+                    y ahi es donde entra la etiqueta "&lt;br&gt;" esta etiqueta es para dar ese salto de linea que no
+                    puedes hacer normalmente en el codigo, normalmente se usa dentro de
+                    los textos de un parrafo, pero aveces hay excepciones, eso ya dependerá de ti.
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Este&lt;br&gt;es un parrafo &lt;br&gt;que contiene&lt;br&gt;saltos de linea&lt;/p&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Esta etiqueta tambien es acumulativa, asi que mientras mas "br" coloques, mas espacios genera.
+                </p>
+                <p>
+                    Otra etiqueta de auto cierre que por cierto ya la haz visto, pero nunca fue mencionada directamente,
+                    es la etiqueta "&lt;hr&gt;" tambien llamada "Horizontal Rule" o en español "Regla Horizontal"
+                    Es una etiqueta que aparte de crear un salto de linea, tambien traza una linea horizontal entre
+                    medio de las dos etiquetas,
+                    suele usarse para separar dos temas diferentes en la misma seccion, tmabien para separar dos
+                    parrafos o simplemente como linea decorativa.
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Este es un parrafo de ejemplo&lt;/p&gt;
+        &lt;hr&gt;
+        &lt;p&gt;Este es un segundo parrafo de ejemplo&lt;/p&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Otra etiqueta la cual es un poco especial, es la etiqueta de comentario,
+                    esta no es una etiqueta visual, sinó que es una etiqueta para colocar un comentario dentro del
+                    codigo,
+                    Esta etiqueta se escribe asi;<br>"&lt;!-- --&gt;" a simple vista puede parecer una etiqueta de auto
+                    cierre
+                    y si la quieres considerar asi está bien, sin embargo esto no es una etiqueta sinó que al igual que
+                    "DOCTYPE" es
+                    una declaracion, las declaraciones suelen tener el " ! " en su inicio
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!--Esta es la seccion principal--&gt;
+        &lt;section&gt;
+            &lt;p&gt;Este es un texto de ejemplo&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;!--Esta es una seccion secundaria--&gt;
+        &lt;section&gt;
+            &lt;p&gt;Este es otro texto de ejemplo&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <hr>
+                <h3>Etiqueta Center</h3>
+                <p>
+                    La etiqueta "&lt;center&gt; &lt/center&gt;" como su nombre indica, sirve para centrar contenido en
+                    medio de la pantalla,
+                    sin embargo esta etiqueta no es recomendada usar, ya que se suele centrar el contenido desde "CSS"
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;center&gt;
+            &lt;p&gt;Este es un texto de ejemplo&lt;/p&gt;
+        &lt;/center&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <hr>
+                <h3>Selectores</h3>
+                <p>
+                    Las etiquetas de selectores como su nombre indica es para seleccionar textos o etiquetas
+                    para luego modificarlos en "CSS" estas etiquetas las veremos con mas profundidad en "CSS" pero
+                    por ahora está bien con que sepamos cuales son.
+                </p>
+                <p>
+                    La primera que veremos es la etiqueta "&lt;span&gt; &lt,/span&gt;" esta etiqueta
+                    sirve para seleccionar una palabra o una oracion dentro de un parrafo.
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código HTML -->
+                    <div class="code-window" data-lang="html">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar código">
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar código">
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Código copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html">
+                                &lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Esto es un &lt;span&gt;texto&lt;/span&gt; de ejemplo&lt;/p&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de código CSS -->
+                    <div class="code-window" data-lang="css">
+                        <div class="code-header">
+                            <span class="filename">style.css</span>
+                            <button class="copy-btn" title="Copiar código">
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar código">
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Código copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-css">
+span {
+  color: red;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header"><span class="filename">Document</span></div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    La siguiente etiqueta de selector es la etiqueta "&lt;div&gt; &lt;/div&gt;" esta etiqueta cumple
+                    la misma funcion de la etiqueta "span" pero a diferencia de span esta etiqueta es para seleccionar
+                    otras etiquetas, ya sea una individual o un grupo amplio de ellas, cuando trabajes con css vas a
+                    usar
+                    demasiado esta etiqueta
+                </p>
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código HTML -->
+                    <div class="code-window" data-lang="html">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar código">
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar código">
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Código copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html">
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="caja"&gt;
+            &lt;h1&gt;Titulo de la pagina&lt;/h1&gt;
+            &lt;p&gt;Este es una parrafo de ejemplo
+        &lt;/div&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de código CSS -->
+                    <div class="code-window" data-lang="css">
+                        <div class="code-header">
+                            <span class="filename">style.css</span>
+                            <button class="copy-btn" title="Copiar código">
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar código">
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Código copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-css">
+.caja {
+  background: #ff436c;
+  color: #ffff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.caja p {
+    font-size: 17px;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header"><span class="filename">Vista previa</span></div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Con esto concluimos la seccion de "Etiquetas extras" ahora si pasemos con una de las secciones mas
+                    largas, la seccion de formularios.
+                </p>
+            </div>
+        </section>
+        <section class="classroom-container">
+            <div class="classroom-content">
+                <h2>Formularios</h2>
+                <p>
+                    Los formularios sirven para recopilar informacion de los usuarios,
+                    generalmente se usa en registros de cuentas, inicios de sesion o contactos de soporte.
+                </p>
+                <p>
+                    Para crear un formulario tendremos que usar la etiqueta "&lt;form&gt; &lt;/form&gt;"
+                    esto definirá que estas creando un formulario al igual que con las listas y "ul" y "ol"
+                </p>
+                <p>
+                    Dentro de los "form" irán las etiquetas "input" y "output" o en español "entrada (input)" y
+                    "salida(output)", en programacion
+                    el input es una orden que das la cual en cambio reciviras una respuesta de un output, el cual será
+                    una accion
+                    segun el input que le hayas programado.
+                </p>
+                <hr>
+                <h3>Atributos del &lt;input&gt;</h3>
+                <p>
+                    Para los input tenemos 4 atributos, "type=", "required=", "name=" y "value"
+                </p>
+                <p>
+                    El atributo "type" como su nombre indica es para determinar el tipo de
+                    input que será, ya sea de texto, de contraseña, email, numero, color, boton, etc. Esos serian
+                    valores del "type"
+                </p>
+                <p>
+                    EJEMPLOS DE TODOS LOS INPUT:
+                </p>
+                <!-- Ventana de código HTML -->
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;form&gt;
+            &lt;input type="text"&gt;Input 1&lt;/input&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;input type="password"&gt;Input 2&lt;/input&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;input type="number"&gt;Input 3&lt;/input&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;input type="email"&gt;Input 4&lt;/input&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;input type="color"&gt;Input 5&lt;/input&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;input type="range" min="1" max="10"&gt;Input 6&lt;/input&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;input type="datetime-local"&gt;Input 14&lt;/input&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;input type="button"&gt;Input 9&lt;/input&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;input type="submit"&gt;Input 10&lt;/input&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;input type="search"&gt;Input 11&lt;/input&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;input type="tel"&gt;Input 12&lt;/input&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;input type="url"&gt;Input 13&lt;/input&gt;
+        &lt;/form&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Ahora pasaremos a explicar cada tipo de input a detalle
+                </p>
+                <div class="un-list">
+                    <ul>
+                        <li>
+                            <p>
+                                El input "text" genera un campo de texto, esto puede servir para colocar nombres,
+                                apellidos, usuario, etc.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                El input "password" como su nombre indica, es para colocar un campo de contraseña.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                El input "number" te permite solamente escribir numeros, aparte de tener dos votones
+                                para
+                                aumentar o disminuir el valor del numero.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                El input "email" como su nombre indica, es para escribir un email.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                El input "color" te permite usar la paleta de colores, ya sea con codigo RGB,
+                                Hexadecimal, etc.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                El input "range" se usa para elegir un rango de cierto numero, "range" tambien viene con
+                                las propiedades "min=" y "max=" las cuales se usan para colocar un numero del 1 al ∞,
+                                aunque generalmente se usa del 1 al 100 y es para crear controles de volumen.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                El input "datetime-local" es para colocar una fecha y una hora sin tener informacion de
+                                zona horaria especifica,
+                                sin embargo tambien existen variaciones de este input, por ejemplo el imput "date" en el
+                                que solamente
+                                puedes elegir una fecha, tambien tenemos el input "time" que es para elegir una hora en
+                                especifico,
+                                despues tenemos el input "month" el cual te permite elegir un mes y un año, tambien
+                                tenemos el input "week" que permite elegir un numero de semana y su año, aparte de eso,
+                                usando las propiedades "min=" y "max=" puedes limitar el rango de fechas.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                El input "search" generará un campo de busqueda, el cual mas adelante aprenderemos a
+                                armar uno correctamente.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                El input "button" te generará un botón.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                El input "submit" es un botón en especifico el cual tiene la funcionalidad de enviar los
+                                datos
+                                de los inputs que hayas colocado.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                El input "tel" sirve especificamente para dispositivos moviles o tablets los cuales
+                                contienen teclado dinamico, este tinput hará que a estos dispositivos solamente les
+                                aparezca el teclado
+                                numerico.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                El input "url" es un campo de texto, sin embargo con este input no se te permitirá
+                                enviar el input si no formaste bien un link, con su http: su .com, etc.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <p>
+                    Con esto concluimos la parte de Tipos de inputs, ahora pasaremos con las siguientes 3 propiedades de
+                    los inputs.
+                </p>
+                <p>
+                    La propiedad "name" la veremos cuando trabajemos con ella ya que es innecesario explicarla ahora.
+                </p>
+                <p>
+                    La propiedad "required=" obliga al usuario completar el input para poder ser enviado.
+                </p>
+                <p>
+                    La propiedad "value=" es para colocar un nombre dentro del input, por ejemplo, el input "submit"
+                    contiene
+                    el "value=" predeterminado de "Enviar", sin embargo en input de tipo escritura, el "value=" se
+                    convierte
+                    en un texto ya escrito en ese campo, como reemplazo de "value=" en los campos de texto o numeros,
+                    tenemos la
+                    propiedad "placeholder=" la cual deja un texto de ayuda que solo se muestra cuando el campo está
+                    vacio
+                </p>
+                <p>
+                    EJEMPLO:
+                </p>
+                <!-- Ventana de código HTML -->
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;form&gt;
+            &lt;input type="button" value="Nombre de ejemplo"&gt;Input 1&lt;/input&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;input type="text" value="Nombre de ejemplo"&gt;Input 1&lt;/input&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;input type="text" placeholder="Nombre de ejemplo"&gt;Input 1&lt;/input&gt;
+        &lt;/form&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Ahora tenemos una etiqueta, esta etiqueta es similar a un input, pero
+                    digamos que esta etiqueta es un tipo de input en especifico.
+                </p>
+                <p>
+                    La etiqueta es "&lt;textarea&gt; &lt;/textarea&gt;", Esta etiqueta generará un campo 
+                    de texto similar al "&lt;input type"text"&gt;" sin embargo el campo de este texto es moldeable, 
+                    generalmente se usa para la parte de contactar a soporte donde te pidan descripciones bastantes largas, 
+                    tambien con la propiedad "readonly" podemos que el usuario solo pueda leer el contenido del "textaera"
+                </p>
+                <P>
+                    EJEMPLO:
+                </P>
+                <!-- Ventana de código HTML -->
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;form&gt;
+            &lt;textarea placeholder="Texto de ejemplo"&gt;&lt;/textarea&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;textarea readonly=""&gt;Texto de ejemplo&lt;/textarea&gt;
+        &lt;/form&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Ahora veremos la etiqueta "label", esta etiqueta funciona de una forma similar 
+                    a la propiedad "placeholder" indicará el nombre del input, sin embargo, este nombre se encontrará 
+                    por fuera del campo de texto, ademas cuando haces click en el nombre dado por el label, el mismo te permitirá 
+                    escribir en el input, los "input" suelen colocarce debajo de las etiquetas "label" y tambien el input y 
+                    el label irán vinculados por una "id", el label llevará la propiedad "for=" con el valor que quieras darle, mientras que el input 
+                    llevará la propiedad "id=" con el mismo valor del "for=".
+                </p>
+                <!-- Ventana de código HTML -->
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;form&gt;
+            &lt;label for="usuario"&gt;Usuario&lt;/label&gt;
+            &lt;input type="text" id="usuario"&gt;&lt;/input&gt;
+        &lt;/form&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+                <p>
+                    Con esto terminamos la seccion de listas, a sido la seccion que mas tiempo me a llevado jaja.
+                </p>
+            </div>
+        </section>
+        <section class="classroom-container">
+            <div class="classroom-content">
+                <h2>Funcion De Tablas</h2>
+                <p>
+                    El uso de tablas es una forma de mostrar datos, generalmente muy usada en usuarios de Excel, <br>
+                    las tablas se colocan utilizando la etiqueta "table" está etiqueta ayuda a agrupar datos de un mismo tipo por columnas.
+                </p>
+                <p>
+                    dentro de la etiqueta "table" se usarán las etiquetas "thead" y "tbody", la etiqueta "thead" sirve 
+                    para saber que tipo de dato habrá, por ejemplo "nombre" dentro de la etiqueta "thead" irá la etiqueta "tr", esta 
+                    etiqueta define una fila, y dentro de la etiqueta "tr" usaremos la etiqueta "th" dentro de la etiqueta "th" podemos 
+                    escribir el dato, por ejemplo "&lt;th&gt; Nombre &lt;/th&gt;"
+                </p>
+                <p>
+                    Despues en la etiqueta "tbody" escribiremos los datos, para eso usaremos de nuevo la etiqueta "tr" 
+                    para definir una fila y despues en vez de "th" utilizaremos la etiqueta "td".
+                </p>
+                <p>
+                    EJEMPLO:
+                </p>
+                <!-- Ventana de código HTML -->
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;table&gt;
+             &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Nombre&lt;/th&gt;
+                    &lt;th&gt;Edad&lt;/th&gt;
+                    &lt;th&gt;Pais&lt;/th&gt;
+                    &lt;th&gt;Ciudad&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Maria&lt;/td&gt;
+                    &lt;td&gt;25&lt;/td&gt;
+                    &lt;td&gt;España&lt;/td&gt;
+                    &lt;td&gt;Madrid&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Juan&lt;/td&gt;
+                    &lt;td&gt;30&lt;/td&gt;
+                    &lt;td&gt;USA&lt;/td&gt;
+                    &lt;td&gt;Chicago&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Naru&lt;/td&gt;
+                    &lt;td&gt;23&lt;/td&gt;
+                    &lt;td&gt;Japón&lt;/td&gt;
+                    &lt;td&gt;Tokyo&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Ren&lt;/td&gt;
+                    &lt;td&gt;35&lt;/td&gt;
+                    &lt;td&gt;UK&lt;/td&gt;
+                    &lt;td&gt;Brighton&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="classroom-container">
+            <div class="classroom-content">
+                <h2>HTML Semantico</h2>
+                <p>
+                    Antes de terminar con la parte del body, queria hablarles sobre la semantica, la 
+                    semantica es basicamente la forma correcta de usar las etiquetas, por ejemplo yo 
+                    podria usar un "p" como titulo, sin embargo eso no es semantico, el titulo siempre irá 
+                    en la etiqueta "h1" ya que es la etiqueta destinada a usarse en un titulo.
+                </p>
+                <p>
+                    Existen varias razones para tener una buena semantica, la primera es que mientras mejor 
+                    sea tu semantica, los buscadores te posicionarán mas alto en sus motores de busqueda, 
+                    haciendo que los usuarios puedan encontrar tu pagina mas facilmente.
+                </p>
+                <p>
+                    La segunda razon es para una mejor lectura en el codigo, el uso de etiquetas correctas, 
+                    comentarios y demas, hace que puedas leer mas facilmente el codigo y con eso mejorar tu efectividad 
+                    a la hora de hacerle mantenimiento o mejoras a la pagina
+                </p>
+                <p>
+                    La tercera razon seria por una mayor compatibilidad y coherencia, lo que hará que los navegadores muestren 
+                    el contenido de forma mas consistente.
+                </p>
+                <p>
+                    La cuarta razon podria ser una mejor accesibilidad para el usuario, por ejemplo muchos lectores 
+                    de pantalla (principalmente usados por personas con discapacidad visual) pueden interpretar el contenido 
+                    correctamente
+                </p>
+                <p>
+                    Cuando empezamos una pagina tenemos tres etiquetas principales, la de encabezado "header" la del contenido "main" y la del pie de 
+                    pagina "footer", dentro de la etiqueta "header" siempre colocaremos la etiqueta "nav" la cual se usa 
+                    para la barra de navegacion, dentro de la etiqueta "main" irán los "section" y dentro del "footer" 
+                    irá todo lo relacionado con el pie de pagina, por ejemplo el copyright, quizas algunos links, etc.
+                </p>
+                <!-- Ventana de código HTML -->
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+    &lt;!--Encabezado de pagina--&gt;
+        &lt;header&gt;
+            &lt;nav&gt;
+                &lt;h1&gt;Titulo&lt;/h1&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;
+                        &lt;a&gt;Link 1&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a&gt;Link 2&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a&gt;Link 3&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/header&gt;
+
+        &lt;!--Contenido principal de la pagina--&gt;
+        &lt;main&gt;
+
+            &lt;!--Seccion Uno--&gt;
+            &lt;section&gt;
+                &lt;div&gt;
+                    &lt;h2&gt;Titulo de Seccion&lt;/h2&gt;
+                    &lt;p&gt;
+                        Parrafo de ejemplo para esta seccion, 
+                        aparte de parrafos puedes añadir mas cosas, 
+                        como links, contenidos personalizados, 
+                        imagenes, etc.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+            
+            &lt;!--Seccion Dos--&gt;
+            &lt;section&gt;
+                &lt;div&gt;
+                    &lt;h2&gt;Titulo de Seccion dos&lt;/h2&gt;
+                    &lt;p&gt;
+                        Parrafo de ejemplo para esta seccion, 
+                        aparte de parrafos puedes añadir mas cosas, 
+                        como links, contenidos personalizados, 
+                        imagenes, etc.
+                    &lt;/p&gt;
+                    &lt;hr&gt;
+                    &lt;h3&gt;Segundo Titulo En La Misma Seccion&lt;/h3&gt;
+                    &lt;p&gt;
+                        Parrafo de ejemplo para esta seccion, 
+                        aparte de parrafos puedes añadir mas cosas, 
+                        como links, contenidos personalizados, 
+                        imagenes, etc.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+
+        &lt;!--Pie de pagina y final--&gt;
+        &lt;footer&gt;
+            &lt;div&gt;
+                &lt;p&gt;© Copyright 2025 | Todos los derechos Reservados&lt;/p&gt;
+            &lt;div&gt;
+        &lt;/footer&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="classroom-container">
+            <div class="classroom-content">
+                <h2>Contenido Del Head</h2>
+                <p>
+                    Como vimos en la introduccion, en el head se encuentra todo el contenido 
+                    que no es visible para el usuario en la web, estos datos suelen estar mas orientados 
+                    a los clientes y a los motores de busquedas, la etiqueta mas basica en head que tenemos son 
+                    "title" la cual vimos al comienzo, la mayoria de etiquetas en el head sino es que todas, 
+                    son etiquetas de auto cierre.
+                </p>
+                <p>
+                    La primera etiqueta que veremos es la etiqueta "&lt;meta&gt;", 
+                    esta etiqueta tiene una amplitud de usos dependiendo de las propiedades usadas en ella, 
+                    su nombre quiere decir metadatos, es una etiqueta en la que colocaremos informacion acerca 
+                    de nuestro documento HTML.
+                </p>
+                <hr>
+                <h3>Meta Viewport</h3>
+                <p>
+                    El primer tipo de metadatos que veremos es el primero que vemos al crear 
+                    el documento HTML, <br>"&lt;meta name="viewport" content="width0device-width, initial-scale=1.0"&gt;"
+                </p>
+                <p>
+                    Bien empecemos explicando el metadato paso por paso, primero tenemos la etiqueta 
+                    en si "meta" la cual ya sabemos su funcionamiento, despues tenemos la propiedad "name" con el 
+                    valor "viewport", la propiedad "name" define el tipo de metadato, en este caso 
+                    el metadato es "viewport", este metadato le dice al navegador como debe mostrar 
+                    y escalar la pagina en dispositivos moviles.
+                </p>
+                <p>
+                    Por defecto, antes de HTML5, los navegadores moviles solian simular un ancho de 
+                    pantalla fijo (ejemplo: 980px) y luego reducian el contenido para que encajara en pantallas pequeñas. 
+                    esto hacia que los titios se vieran muy pequeños o ilegibles en celulares.
+                </p>
+                <p>
+                    El metadato "viewport" cambia ese comportamiento, permitiendo controlar 
+                    directamente como se adapta la pagina al ancho real del dispositivo.
+                </p>
+                <p>
+                    "width=devicewidth" Hace que el ancho del área visible (viewport) 
+                    sea igual al ancho físico del dispositivo. Esto permite que el diseño responda al 
+                    tamaño real de la pantalla. En un iPhone de 390px, el viewport también será de 390px.
+                </p>
+                <p>
+                    "initial-scale=1.0" Define el nivel de zoom inicial cuando se carga la página. Un valor 
+                    de 1.0 significa que no hay zoom (la página se muestra al 100%). 
+                    Si pones initial-scale=2.0, la página se verá ampliada al doble.
+                </p>
+                <p>
+                    Puedes agregar mas valores dentro de "content", separados por comas, por ejemplo:
+                </p>
+                <p>
+                    "minimum-scale=1.0" Esto evita que el usuario haga zoom para alejar mas 
+                    de ese valor.
+                </p>
+                <p>
+                    "maximum-scale=1.0" Esto evita que el usuario haga zoom para hacercar mas 
+                    de ese valor.
+                </p>
+                <p>
+                    "user-scalable=no" Esto desactiva completamente el zoom tactil, esta opcion no 
+                    es recomendada.
+                </p>
+                <hr>
+                <h3>Metadato Charset</h3>
+                <p>
+                    El metadato "charset" sirve para cambiar la codificacion del archivo/pagina, 
+                    el charset significa "conjunto de caracteres" lo que hace es cambiar los tipos de 
+                    caracteres usados, al charset se el suele dar el valor de "utf-8" esto es una codificacion 
+                    de texto universal, con utf-8 serás capaz de usar caracteres con tildes y otros tipos de simbolos 
+                    en los textos
+                </p>
+                <P>
+                    EJEMPLO:
+                </P>
+                <!--Solo Ventana De Comando-->
+                <div class="preview-container">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html typewriter">
+&lt;meta charset="utf-8"&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h3>Metas para el SEO</h3>
+                <p>
+                    El SEO, tambien conocido como Optimizacion para motores de busqueda, es lo que 
+                    estuvimos hablando anteriormente, ahora veremos los metadatos hechos para ello
+                </p>
+                <!--Solo Ventana De Comando-->
+                <div class="preview-container">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html typewriter">
+&lt;meta name="keywords" content="musica, guitarra"&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Con este metadato podemos usar palabras claves para describir nuestra pagina 
+                    este metadato estaba destinado a que los buscadores puedieran encontrar tu pagina 
+                    mas facilmente con palabras clave segun que buscara el usuario, por ejemplo si 
+                    alguien buscaba harina y tu que tenias una pagina de un restaurante y tenias 
+                    de palabra clave harina, te iba a posicionar mas arriba en la lista de busqueda, 
+                    sin embargo actualmente este meta no tiene tanto peso en el SEO debido a que 
+                    hace unos años las personas empezaron a abusar de esta etiqueta 
+                    añadiendo cantidades innecesarias de palabras las cuales la mayoria ni siquiera 
+                    eran relacionadas con su pagina, simplemente lo hacian para una mejor posicion en los 
+                    motores de busqueda.
+                </p>
+                <hr>
+                <!--Solo Ventana De Comando-->
+                <div class="preview-container">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html typewriter">
+&lt;meta name="description" content=""&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Este meta es utilizado para una descripcion breve de tu pagina web, lo 
+                    recomendable es una descripcion entre 150 a 160 caracteres.
+                </p>
+                <hr>
+                <!--Solo Ventana De Comando-->
+                <div class="preview-container">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html typewriter">
+&lt;meta name="author" content=""&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Este meta es utilizado para colocar el autor o creador de la pagina web.
+                </p>
+                <hr>
+                <!--Solo Ventana De Comando-->
+                <div class="preview-container">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html typewriter">
+&lt;meta name="copyright" content=""&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Este meta como su nombre indica, es para colocar el copyright.
+                </p>
+                <hr>
+                <!--Solo Ventana De Comando-->
+                <div class="preview-container">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-html typewriter">
+&lt;meta name="robots" content=""&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    El meta robots sirve para decirle a los motores de busqueda como 
+                    deben comportarse al visitar (rastrear) e indexar tu pagina
+                </p>
+                <p>
+                    Por ejemplo el meta "robots" con el contenido "index" hará que tu pagina 
+                    aparezca en los motores de busqueda como google, etc. Mientras que si colocas en "content" 
+                    "noindex" tu pagina nunca saltará en los motores de busqueda de buscadores normales como google, bing, etc. 
+                    Esto se suele hacer en paginas por ejemplo de la dark-web, lo que las hace mas complicadas de rastrear, 
+                    muchos incluso no colocan archivos "index.html" en ese tipo de paginas.
+                </p>
+            </div>
+        </section>
+        <section class="classroom-container">
+            <div class="classroom-content">
+                <h2>Conclucion Del HTML</h2>
+                <p>
+                    Con esto concluimos la parte de HTML, si quieres puedes visitar 
+                    los apartados de CSS, JS y mas.
+                </p>
+                <p><span class="final-content">&lt;/ &gt;</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-contenido">
+                <div class="footer-logo">
+                    <img src="../iconos/logotipo.svg" alt="logo" class="footer-logotipo">
+                    <h2>B.D.C</h2>
+                </div>
+
+                <nav class="footer-links">
+                    <a href="../index.html">Inicio</a>
+                    <a href="../pages/libro-html.html">HTML</a>
+                    <a href="../pages/libro-css.html">CSS</a>
+                    <a href="../pages/libro-js.html">JS</a>
+                </nav>
+
+                <div class="footer-social">
+                    <a href="#" target="_blank">🐙 GitHub</a>
+                    <a href="#" target="_blank">💼 LinkedIn</a>
+                    <a href="#" target="_blank">✉️ Contacto</a>
+                </div>
+            </div>
+
+            <div class="footer-copy">
+                <p>Textito de copyright, porque si xd | © 2025 Biblioteca De Conocimiento</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de la pagina -->
+    <script src="../js/nav.js"></script>
+    <script src="../js/prism.js"></script>
+    <script src="../js/sala-de-codigo.js"></script>
+</body>
+
+</html>
