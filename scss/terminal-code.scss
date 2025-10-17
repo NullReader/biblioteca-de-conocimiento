@@ -9,8 +9,11 @@
 
 /* Cuando hay vista previa (dos ventanas lado a lado) */
 .preview-container.has-preview {
+  display: flex;
   flex-direction: row;
-  align-items: stretch;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* Ventanas individuales */
@@ -23,6 +26,7 @@
   border-radius: 10px;
   overflow: hidden;
   min-height: 360px;
+  max-width: 507px;
 }
 
 /* Encabezado (nombre de archivo, etc.) */
@@ -36,8 +40,8 @@
 
 .code-header {
   display: flex;
-  align-items: center;        /* 🔥 centra verticalmente */
-  justify-content: space-between; /* separa filename y botón */
+  align-items: center;        
+  justify-content: space-between; 
   background: #2c2c2c;
   color: #fff;
   padding: 0.5rem 1rem;
@@ -49,7 +53,7 @@
 
 .code-header .filename {
   flex: 1;
-  text-align: center;         /* 🔥 lo deja centrado incluso con el botón al lado */
+  text-align: center;         
   font-weight: 500;
 }
 

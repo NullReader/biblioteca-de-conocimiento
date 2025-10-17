@@ -13,29 +13,16 @@
 <body>
     <header>
         <nav class="navbar">
-            <a href="../index.html">
-                <div class="logo-container">
-                    <img class="logotipo" src="../iconos/logotipo.svg" alt="">
-                    <h1 class="titulo"><span>B.D.C</span></h1>
-                </div>
+            <a href="../index.html" class="logo-container">
+                <img class="logotipo" src="../iconos/logotipo.svg" alt="Logotipo B.D.C">
+                <h1 class="titulo"><span>B.D.C</span></h1>
             </a>
 
             <div class="buscador">
                 <form class="search-field" id="search" name="search" action="/buscar" method="get">
                     <input class="search-input" type="text" placeholder="Buscar...">
-                    <button class="search-button" type="submit">Buscar</button>
+                    <button class="search-button" type="submit">🔍</button>
                 </form>
-
-                <button class="search-toggle" id="searchToggle">
-                    🔍
-                </button>
-            </div>
-
-            <!-- Botón Hamburguesa -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
             </div>
 
             <div class="nav-links">
@@ -46,10 +33,16 @@
                     <li><a href="../pages/libro-js.html">JS</a></li>
                 </ul>
             </div>
+
+            <!-- Botón Hamburguesa -->
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
     </header>
 
     <main>
+        <!--Introduccion al HTML-->
         <section class="classroom-container">
             <div class="classroom-content">
                 <h2>INTRODUCCION AL HTML</h2>
@@ -121,6 +114,7 @@
             </div>
         </section>
 
+        <!--Etiquetas/Body/Head-->
         <section class="classroom-container">
             <div class="classroom-content">
                 <h2>USOS DE ETIQUETAS, Y introduccion al BODY Y HEAD</h2>
@@ -369,6 +363,8 @@
                 </p>
             </div>
         </section>
+
+        <!--Encabezados/Parrafos-->
         <section class="classroom-container">
             <div class="classroom-content">
                 <h2>
@@ -447,6 +443,8 @@
                 </p>
             </div>
         </section>
+
+        <!--Tipos De Textos-->
         <section class="classroom-container">
             <div class="classroom-content">
                 <h2 id="listas">Tipos De Textos</h2>
@@ -526,6 +524,8 @@
 
             </div>
         </section>
+
+        <!--Listas-->
         <section class="classroom-container">
             <div class="classroom-content">
                 <h2>Listas</h2>
@@ -605,6 +605,8 @@
                 </div>
             </div>
         </section>
+
+        <!--Links-->
         <section class="classroom-container">
             <div class="classroom-content">
                 <h2>Links</h2>
@@ -673,7 +675,8 @@
                     ventana de
                     ejemplo de codigo:
                 </p>
-                <div class="preview-container">
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
                     <div class="code-window">
                         <div class="code-header">
                             <span class="filename">index.html</span>
@@ -685,7 +688,8 @@
                             </button>
                         </div>
                         <div class="code-content">
-                            <pre><code class="language-html typewriter">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
     &lt;head&gt;
@@ -697,7 +701,8 @@
         &lt;a href="ejemplo.html" target="_blank"&gt;Botón&lt;/a&gt;
     &lt;body&gt;
 &lt;/html&gt;
-                            </code></pre>
+                                </code></pre>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -851,6 +856,8 @@
 
             </div>
         </section>
+
+        <!--Etiquetas Extras-->
         <section class="classroom-container">
             <div class="classroom-content">
                 <h2>Etiquetas extras</h2>
@@ -1254,22 +1261,23 @@
                     por ahora está bien con que sepamos cuales son.
                 </p>
                 <p>
-                    La primera que veremos es la etiqueta "&lt;span&gt; &lt,/span&gt;" esta etiqueta
-                    sirve para seleccionar una palabra o una oracion dentro de un parrafo.
+                    La primera que veremos es la etiqueta "&lt;span&gt; &lt/span&gt;" esta etiqueta
+                    sirve para seleccionar una palabra o una oracion dentro de un texto.
                 </p>
                 <div class="preview-container has-preview">
-                    <!-- Ventana de código HTML -->
+                    <!-- Ventana de código -->
                     <div class="code-window" data-lang="html">
                         <div class="code-header">
                             <span class="filename">index.html</span>
-                            <button class="copy-btn" title="Copiar código">
-                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar código">
-                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Código copiado">
+                            <button class="copy-btn" title="Copiar codigo">
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
                             </button>
                         </div>
                         <div class="code-content">
-                            <pre><code class="language-html">
-                                &lt;!DOCTYPE html&gt;
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
     &lt;head&gt;
         &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
@@ -1277,11 +1285,11 @@
         &lt;title&gt;Document&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        &lt;p&gt;Esto es un &lt;span&gt;texto&lt;/span&gt; de ejemplo&lt;/p&gt;
+        &lt;p&gt;Este es un &lt;span&gt;Texto&lt;/span&gt; de ejemplo&lt;/p&gt;
     &lt;body&gt;
 &lt;/html&gt;
-
-                            </code></pre>
+                                </code></pre>
+                            </div>
                         </div>
                     </div>
 
@@ -1317,17 +1325,19 @@ span {
                     demasiado esta etiqueta
                 </p>
                 <div class="preview-container has-preview">
-                    <!-- Ventana de código HTML -->
+                    <!-- Ventana de código -->
                     <div class="code-window" data-lang="html">
                         <div class="code-header">
                             <span class="filename">index.html</span>
-                            <button class="copy-btn" title="Copiar código">
-                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar código">
-                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Código copiado">
+                            <button class="copy-btn" title="Copiar codigo">
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
                             </button>
                         </div>
                         <div class="code-content">
-                            <pre><code class="language-html">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
     &lt;head&gt;
         &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
@@ -1341,7 +1351,8 @@ span {
         &lt;/div&gt;
     &lt;body&gt;
 &lt;/html&gt;
-                            </code></pre>
+                                </code></pre>
+                            </div>
                         </div>
                     </div>
 
@@ -1383,6 +1394,8 @@ span {
                 </p>
             </div>
         </section>
+
+        <!--Formularios-->
         <section class="classroom-container">
             <div class="classroom-content">
                 <h2>Formularios</h2>
@@ -1654,10 +1667,12 @@ span {
                     digamos que esta etiqueta es un tipo de input en especifico.
                 </p>
                 <p>
-                    La etiqueta es "&lt;textarea&gt; &lt;/textarea&gt;", Esta etiqueta generará un campo 
-                    de texto similar al "&lt;input type"text"&gt;" sin embargo el campo de este texto es moldeable, 
-                    generalmente se usa para la parte de contactar a soporte donde te pidan descripciones bastantes largas, 
-                    tambien con la propiedad "readonly" podemos que el usuario solo pueda leer el contenido del "textaera"
+                    La etiqueta es "&lt;textarea&gt; &lt;/textarea&gt;", Esta etiqueta generará un campo
+                    de texto similar al "&lt;input type"text"&gt;" sin embargo el campo de este texto es moldeable,
+                    generalmente se usa para la parte de contactar a soporte donde te pidan descripciones bastantes
+                    largas,
+                    tambien con la propiedad "readonly" podemos que el usuario solo pueda leer el contenido del
+                    "textaera"
                 </p>
                 <P>
                     EJEMPLO:
@@ -1708,11 +1723,14 @@ span {
                     </div>
                 </div>
                 <p>
-                    Ahora veremos la etiqueta "label", esta etiqueta funciona de una forma similar 
-                    a la propiedad "placeholder" indicará el nombre del input, sin embargo, este nombre se encontrará 
-                    por fuera del campo de texto, ademas cuando haces click en el nombre dado por el label, el mismo te permitirá 
-                    escribir en el input, los "input" suelen colocarce debajo de las etiquetas "label" y tambien el input y 
-                    el label irán vinculados por una "id", el label llevará la propiedad "for=" con el valor que quieras darle, mientras que el input 
+                    Ahora veremos la etiqueta "label", esta etiqueta funciona de una forma similar
+                    a la propiedad "placeholder" indicará el nombre del input, sin embargo, este nombre se encontrará
+                    por fuera del campo de texto, ademas cuando haces click en el nombre dado por el label, el mismo te
+                    permitirá
+                    escribir en el input, los "input" suelen colocarce debajo de las etiquetas "label" y tambien el
+                    input y
+                    el label irán vinculados por una "id", el label llevará la propiedad "for=" con el valor que quieras
+                    darle, mientras que el input
                     llevará la propiedad "id=" con el mismo valor del "for=".
                 </p>
                 <!-- Ventana de código HTML -->
@@ -1763,21 +1781,26 @@ span {
                 </p>
             </div>
         </section>
+
+        <!--Tablas-->
         <section class="classroom-container">
             <div class="classroom-content">
                 <h2>Funcion De Tablas</h2>
                 <p>
                     El uso de tablas es una forma de mostrar datos, generalmente muy usada en usuarios de Excel, <br>
-                    las tablas se colocan utilizando la etiqueta "table" está etiqueta ayuda a agrupar datos de un mismo tipo por columnas.
+                    las tablas se colocan utilizando la etiqueta "table" está etiqueta ayuda a agrupar datos de un mismo
+                    tipo por columnas.
                 </p>
                 <p>
-                    dentro de la etiqueta "table" se usarán las etiquetas "thead" y "tbody", la etiqueta "thead" sirve 
-                    para saber que tipo de dato habrá, por ejemplo "nombre" dentro de la etiqueta "thead" irá la etiqueta "tr", esta 
-                    etiqueta define una fila, y dentro de la etiqueta "tr" usaremos la etiqueta "th" dentro de la etiqueta "th" podemos 
+                    dentro de la etiqueta "table" se usarán las etiquetas "thead" y "tbody", la etiqueta "thead" sirve
+                    para saber que tipo de dato habrá, por ejemplo "nombre" dentro de la etiqueta "thead" irá la
+                    etiqueta "tr", esta
+                    etiqueta define una fila, y dentro de la etiqueta "tr" usaremos la etiqueta "th" dentro de la
+                    etiqueta "th" podemos
                     escribir el dato, por ejemplo "&lt;th&gt; Nombre &lt;/th&gt;"
                 </p>
                 <p>
-                    Despues en la etiqueta "tbody" escribiremos los datos, para eso usaremos de nuevo la etiqueta "tr" 
+                    Despues en la etiqueta "tbody" escribiremos los datos, para eso usaremos de nuevo la etiqueta "tr"
                     para definir una fila y despues en vez de "th" utilizaremos la etiqueta "td".
                 </p>
                 <p>
@@ -1867,44 +1890,49 @@ span {
                 </div>
             </div>
         </section>
+
+        <!--Semantica-->
         <section class="classroom-container">
             <div class="classroom-content">
                 <h2>HTML Semantico</h2>
                 <p>
-                    Antes de terminar con la parte del body, queria hablarles sobre la semantica, la 
-                    semantica es basicamente la forma correcta de usar las etiquetas, por ejemplo yo 
-                    podria usar un "p" como titulo, sin embargo eso no es semantico, el titulo siempre irá 
+                    Antes de terminar con la parte del body, queria hablarles sobre la semantica, la
+                    semantica es basicamente la forma correcta de usar las etiquetas, por ejemplo yo
+                    podria usar un "p" como titulo, sin embargo eso no es semantico, el titulo siempre irá
                     en la etiqueta "h1" ya que es la etiqueta destinada a usarse en un titulo.
                 </p>
                 <p>
-                    Existen varias razones para tener una buena semantica, la primera es que mientras mejor 
-                    sea tu semantica, los buscadores te posicionarán mas alto en sus motores de busqueda, 
+                    Existen varias razones para tener una buena semantica, la primera es que mientras mejor
+                    sea tu semantica, los buscadores te posicionarán mas alto en sus motores de busqueda,
                     haciendo que los usuarios puedan encontrar tu pagina mas facilmente.
                 </p>
                 <p>
-                    La segunda razon es para una mejor lectura en el codigo, el uso de etiquetas correctas, 
-                    comentarios y demas, hace que puedas leer mas facilmente el codigo y con eso mejorar tu efectividad 
+                    La segunda razon es para una mejor lectura en el codigo, el uso de etiquetas correctas,
+                    comentarios y demas, hace que puedas leer mas facilmente el codigo y con eso mejorar tu efectividad
                     a la hora de hacerle mantenimiento o mejoras a la pagina
                 </p>
                 <p>
-                    La tercera razon seria por una mayor compatibilidad y coherencia, lo que hará que los navegadores muestren 
+                    La tercera razon seria por una mayor compatibilidad y coherencia, lo que hará que los navegadores
+                    muestren
                     el contenido de forma mas consistente.
                 </p>
                 <p>
-                    La cuarta razon podria ser una mejor accesibilidad para el usuario, por ejemplo muchos lectores 
-                    de pantalla (principalmente usados por personas con discapacidad visual) pueden interpretar el contenido 
+                    La cuarta razon podria ser una mejor accesibilidad para el usuario, por ejemplo muchos lectores
+                    de pantalla (principalmente usados por personas con discapacidad visual) pueden interpretar el
+                    contenido
                     correctamente
                 </p>
                 <p>
-                    Cuando empezamos una pagina tenemos tres etiquetas principales, la de encabezado "header" la del contenido "main" y la del pie de 
-                    pagina "footer", dentro de la etiqueta "header" siempre colocaremos la etiqueta "nav" la cual se usa 
-                    para la barra de navegacion, dentro de la etiqueta "main" irán los "section" y dentro del "footer" 
+                    Cuando empezamos una pagina tenemos tres etiquetas principales, la de encabezado "header" la del
+                    contenido "main" y la del pie de
+                    pagina "footer", dentro de la etiqueta "header" siempre colocaremos la etiqueta "nav" la cual se usa
+                    para la barra de navegacion, dentro de la etiqueta "main" irán los "section" y dentro del "footer"
                     irá todo lo relacionado con el pie de pagina, por ejemplo el copyright, quizas algunos links, etc.
                 </p>
                 <!-- Ventana de código HTML -->
                 <div class="preview-container has-preview">
                     <!-- Ventana de código -->
-                    <div class="code-window">
+                    <div class="code-window" data-lang="html">
                         <div class="code-header">
                             <span class="filename">index.html</span>
                             <button class="copy-btn" title="Copiar codigo">
@@ -1929,18 +1957,20 @@ span {
     &lt;!--Encabezado de pagina--&gt;
         &lt;header&gt;
             &lt;nav&gt;
-                &lt;h1&gt;Titulo&lt;/h1&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;
-                        &lt;a&gt;Link 1&lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li&gt;
-                        &lt;a&gt;Link 2&lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li&gt;
-                        &lt;a&gt;Link 3&lt;/a&gt;
-                    &lt;/li&gt;
-                &lt;/ul&gt;
+                &lt;div&gt;
+                    &lt;h1&gt;Titulo&lt;/h1&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;
+                            &lt;a&gt;Link 1&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a&gt;Link 2&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a&gt;Link 3&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
             &lt;/nav&gt;
         &lt;/header&gt;
 
@@ -2003,79 +2033,277 @@ span {
                         <iframe class="preview-frame"></iframe>
                     </div>
                 </div>
-            </div>
+                <p>
+                    Y si a esto le añadieramos estilos con CSS quedaria algo asi:
+                </p>
+                <!-- Ventana de código HTML -->
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
+                    <div class="code-window" data-lang="html">
+                        <div class="code-header">
+                            <span class="filename">index.html</span>
+                            <button class="copy-btn" title="Copiar codigo">
+                                <!-- Ícono de copiar (visible por defecto) -->
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar codigo">
+                                <!-- Ícono de correcto (inicialmente oculto) -->
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Codigo copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/meta&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+    &lt;!--Encabezado de pagina--&gt;
+        &lt;header&gt;
+            &lt;nav class="navbar"&gt;
+                &lt;div class="nav-content"&gt;
+                    &lt;a href="#"&gt;
+                        &lt;h1&gt;Titulo&lt;/h1&gt;
+                    &lt;/a&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;
+                            &lt;a href="#"&gt;Link 1&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href="#"&gt;Link 2&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href="#"&gt;Link 3&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/nav&gt;
+        &lt;/header&gt;
+
+        &lt;!--Contenido principal de la pagina--&gt;
+        &lt;main&gt;
+
+            &lt;!--Seccion Uno--&gt;
+            &lt;section class="cards"&gt;
+                &lt;div&gt;
+                    &lt;h2&gt;Titulo de Seccion&lt;/h2&gt;
+                    &lt;p&gt;
+                        Parrafo de ejemplo para esta seccion, 
+                        aparte de parrafos puedes añadir mas cosas, 
+                        como links, contenidos personalizados, 
+                        imagenes, etc.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+            
+            &lt;!--Seccion Dos--&gt;
+            &lt;section class="cards"&gt;
+                &lt;div&gt;
+                    &lt;h2&gt;Titulo de Seccion dos&lt;/h2&gt;
+                    &lt;p&gt;
+                        Parrafo de ejemplo para esta seccion, 
+                        aparte de parrafos puedes añadir mas cosas, 
+                        como links, contenidos personalizados, 
+                        imagenes, etc.
+                    &lt;/p&gt;
+                    &lt;hr&gt;
+                    &lt;h3&gt;Segundo Titulo En La Misma Seccion&lt;/h3&gt;
+                    &lt;p&gt;
+                        Parrafo de ejemplo para esta seccion, 
+                        aparte de parrafos puedes añadir mas cosas, 
+                        como links, contenidos personalizados, 
+                        imagenes, etc.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+
+        &lt;!--Pie de pagina y final--&gt;
+        &lt;footer&gt;
+            &lt;div class="footer-cont"&gt;
+                &lt;p&gt;© Copyright 2025 | Todos los derechos Reservados&lt;/p&gt;
+            &lt;div&gt;
+        &lt;/footer&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventana de código CSS -->
+                    <div class="code-window" data-lang="css">
+                        <div class="code-header">
+                            <span class="filename">style.css</span>
+                            <button class="copy-btn" title="Copiar código">
+                                <img class="icon-copy" src="../iconos/copy-icon.svg" alt="Copiar código">
+                                <img class="icon-check" src="../iconos/tic-correcto.svg" alt="Código copiado">
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-scroll">
+                                <pre><code class="language-css">
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color:#ff436c;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+}
+
+.nav-content h1 {
+    display: flex;
+    margin: 10px;
+}
+
+.nav-content ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 10px;
+}
+
+.nav-content a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.cards {
+    background-color:#ff436c;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 95%;
+    border-radius: 8px;
+    padding: 30px;
+    color: #fff;
+}
+
+.footer-cont {
+    display: flex;
+    background-color: #ff436c;
+    color: #fff;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px 8px 0 0;
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ventana de vista previa -->
+                    <div class="preview-window">
+                        <div class="preview-header">
+                            <span class="filename">Document</span>
+                        </div>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <!--Contenido del HEAD-->
         <section class="classroom-container">
             <div class="classroom-content">
                 <h2>Contenido Del Head</h2>
                 <p>
-                    Como vimos en la introduccion, en el head se encuentra todo el contenido 
-                    que no es visible para el usuario en la web, estos datos suelen estar mas orientados 
-                    a los clientes y a los motores de busquedas, la etiqueta mas basica en head que tenemos son 
-                    "title" la cual vimos al comienzo, la mayoria de etiquetas en el head sino es que todas, 
+                    Como vimos en la introduccion, en el head se encuentra todo el contenido
+                    que no es visible para el usuario en la web, estos datos suelen estar mas orientados
+                    a los clientes y a los motores de busquedas, la etiqueta mas basica en head que tenemos son
+                    "title" la cual vimos al comienzo, la mayoria de etiquetas en el head sino es que todas,
                     son etiquetas de auto cierre.
                 </p>
                 <p>
-                    La primera etiqueta que veremos es la etiqueta "&lt;meta&gt;", 
-                    esta etiqueta tiene una amplitud de usos dependiendo de las propiedades usadas en ella, 
-                    su nombre quiere decir metadatos, es una etiqueta en la que colocaremos informacion acerca 
+                    La primera etiqueta que veremos es la etiqueta "&lt;meta&gt;",
+                    esta etiqueta tiene una amplitud de usos dependiendo de las propiedades usadas en ella,
+                    su nombre quiere decir metadatos, es una etiqueta en la que colocaremos informacion acerca
                     de nuestro documento HTML.
                 </p>
                 <hr>
                 <h3>Meta Viewport</h3>
                 <p>
-                    El primer tipo de metadatos que veremos es el primero que vemos al crear 
-                    el documento HTML, <br>"&lt;meta name="viewport" content="width0device-width, initial-scale=1.0"&gt;"
+                    El primer tipo de metadatos que veremos es el primero que vemos al crear
+                    el documento HTML, <br>"&lt;meta name="viewport" content="width0device-width,
+                    initial-scale=1.0"&gt;"
                 </p>
                 <p>
-                    Bien empecemos explicando el metadato paso por paso, primero tenemos la etiqueta 
-                    en si "meta" la cual ya sabemos su funcionamiento, despues tenemos la propiedad "name" con el 
-                    valor "viewport", la propiedad "name" define el tipo de metadato, en este caso 
-                    el metadato es "viewport", este metadato le dice al navegador como debe mostrar 
+                    Bien empecemos explicando el metadato paso por paso, primero tenemos la etiqueta
+                    en si "meta" la cual ya sabemos su funcionamiento, despues tenemos la propiedad "name" con el
+                    valor "viewport", la propiedad "name" define el tipo de metadato, en este caso
+                    el metadato es "viewport", este metadato le dice al navegador como debe mostrar
                     y escalar la pagina en dispositivos moviles.
                 </p>
                 <p>
-                    Por defecto, antes de HTML5, los navegadores moviles solian simular un ancho de 
-                    pantalla fijo (ejemplo: 980px) y luego reducian el contenido para que encajara en pantallas pequeñas. 
+                    Por defecto, antes de HTML5, los navegadores moviles solian simular un ancho de
+                    pantalla fijo (ejemplo: 980px) y luego reducian el contenido para que encajara en pantallas
+                    pequeñas.
                     esto hacia que los titios se vieran muy pequeños o ilegibles en celulares.
                 </p>
                 <p>
-                    El metadato "viewport" cambia ese comportamiento, permitiendo controlar 
+                    El metadato "viewport" cambia ese comportamiento, permitiendo controlar
                     directamente como se adapta la pagina al ancho real del dispositivo.
                 </p>
                 <p>
-                    "width=devicewidth" Hace que el ancho del área visible (viewport) 
-                    sea igual al ancho físico del dispositivo. Esto permite que el diseño responda al 
+                    "width=devicewidth" Hace que el ancho del área visible (viewport)
+                    sea igual al ancho físico del dispositivo. Esto permite que el diseño responda al
                     tamaño real de la pantalla. En un iPhone de 390px, el viewport también será de 390px.
                 </p>
                 <p>
-                    "initial-scale=1.0" Define el nivel de zoom inicial cuando se carga la página. Un valor 
-                    de 1.0 significa que no hay zoom (la página se muestra al 100%). 
+                    "initial-scale=1.0" Define el nivel de zoom inicial cuando se carga la página. Un valor
+                    de 1.0 significa que no hay zoom (la página se muestra al 100%).
                     Si pones initial-scale=2.0, la página se verá ampliada al doble.
                 </p>
                 <p>
                     Puedes agregar mas valores dentro de "content", separados por comas, por ejemplo:
                 </p>
                 <p>
-                    "minimum-scale=1.0" Esto evita que el usuario haga zoom para alejar mas 
+                    "minimum-scale=1.0" Esto evita que el usuario haga zoom para alejar mas
                     de ese valor.
                 </p>
                 <p>
-                    "maximum-scale=1.0" Esto evita que el usuario haga zoom para hacercar mas 
+                    "maximum-scale=1.0" Esto evita que el usuario haga zoom para hacercar mas
                     de ese valor.
                 </p>
                 <p>
-                    "user-scalable=no" Esto desactiva completamente el zoom tactil, esta opcion no 
+                    "user-scalable=no" Esto desactiva completamente el zoom tactil, esta opcion no
                     es recomendada.
                 </p>
                 <hr>
                 <h3>Metadato Charset</h3>
                 <p>
-                    El metadato "charset" sirve para cambiar la codificacion del archivo/pagina, 
-                    el charset significa "conjunto de caracteres" lo que hace es cambiar los tipos de 
-                    caracteres usados, al charset se el suele dar el valor de "utf-8" esto es una codificacion 
-                    de texto universal, con utf-8 serás capaz de usar caracteres con tildes y otros tipos de simbolos 
+                    El metadato "charset" sirve para cambiar la codificacion del archivo/pagina,
+                    el charset significa "conjunto de caracteres" lo que hace es cambiar los tipos de
+                    caracteres usados, al charset se el suele dar el valor de "utf-8" esto es una codificacion
+                    de texto universal, con utf-8 serás capaz de usar caracteres con tildes y otros tipos de simbolos
                     en los textos
                 </p>
                 <P>
@@ -2103,7 +2331,7 @@ span {
                 <hr>
                 <h3>Metas para el SEO</h3>
                 <p>
-                    El SEO, tambien conocido como Optimizacion para motores de busqueda, es lo que 
+                    El SEO, tambien conocido como Optimizacion para motores de busqueda, es lo que
                     estuvimos hablando anteriormente, ahora veremos los metadatos hechos para ello
                 </p>
                 <!--Solo Ventana De Comando-->
@@ -2126,15 +2354,15 @@ span {
                     </div>
                 </div>
                 <p>
-                    Con este metadato podemos usar palabras claves para describir nuestra pagina 
-                    este metadato estaba destinado a que los buscadores puedieran encontrar tu pagina 
-                    mas facilmente con palabras clave segun que buscara el usuario, por ejemplo si 
-                    alguien buscaba harina y tu que tenias una pagina de un restaurante y tenias 
-                    de palabra clave harina, te iba a posicionar mas arriba en la lista de busqueda, 
-                    sin embargo actualmente este meta no tiene tanto peso en el SEO debido a que 
-                    hace unos años las personas empezaron a abusar de esta etiqueta 
-                    añadiendo cantidades innecesarias de palabras las cuales la mayoria ni siquiera 
-                    eran relacionadas con su pagina, simplemente lo hacian para una mejor posicion en los 
+                    Con este metadato podemos usar palabras claves para describir nuestra pagina
+                    este metadato estaba destinado a que los buscadores puedieran encontrar tu pagina
+                    mas facilmente con palabras clave segun que buscara el usuario, por ejemplo si
+                    alguien buscaba harina y tu que tenias una pagina de un restaurante y tenias
+                    de palabra clave harina, te iba a posicionar mas arriba en la lista de busqueda,
+                    sin embargo actualmente este meta no tiene tanto peso en el SEO debido a que
+                    hace unos años las personas empezaron a abusar de esta etiqueta
+                    añadiendo cantidades innecesarias de palabras las cuales la mayoria ni siquiera
+                    eran relacionadas con su pagina, simplemente lo hacian para una mejor posicion en los
                     motores de busqueda.
                 </p>
                 <hr>
@@ -2158,7 +2386,7 @@ span {
                     </div>
                 </div>
                 <p>
-                    Este meta es utilizado para una descripcion breve de tu pagina web, lo 
+                    Este meta es utilizado para una descripcion breve de tu pagina web, lo
                     recomendable es una descripcion entre 150 a 160 caracteres.
                 </p>
                 <hr>
@@ -2182,7 +2410,8 @@ span {
                     </div>
                 </div>
                 <p>
-                    Este meta es utilizado para colocar el autor o creador de la pagina web.
+                    Este meta es utilizado para colocar el autor o creador de la pagina web,
+                    o tambien la empresa dueña de la pagina.
                 </p>
                 <hr>
                 <!--Solo Ventana De Comando-->
@@ -2228,23 +2457,27 @@ span {
                     </div>
                 </div>
                 <p>
-                    El meta robots sirve para decirle a los motores de busqueda como 
+                    El meta robots sirve para decirle a los motores de busqueda como
                     deben comportarse al visitar (rastrear) e indexar tu pagina
                 </p>
                 <p>
-                    Por ejemplo el meta "robots" con el contenido "index" hará que tu pagina 
-                    aparezca en los motores de busqueda como google, etc. Mientras que si colocas en "content" 
-                    "noindex" tu pagina nunca saltará en los motores de busqueda de buscadores normales como google, bing, etc. 
-                    Esto se suele hacer en paginas por ejemplo de la dark-web, lo que las hace mas complicadas de rastrear, 
+                    Por ejemplo el meta "robots" con el contenido "index" hará que tu pagina
+                    aparezca en los motores de busqueda como google, etc. Mientras que si colocas en "content"
+                    "noindex" tu pagina nunca saltará en los motores de busqueda de buscadores normales como google,
+                    bing, etc.
+                    Esto se suele hacer en paginas por ejemplo de la dark-web, lo que las hace mas complicadas de
+                    rastrear,
                     muchos incluso no colocan archivos "index.html" en ese tipo de paginas.
                 </p>
             </div>
         </section>
+
+        <!--Seccion 12-->
         <section class="classroom-container">
             <div class="classroom-content">
                 <h2>Conclucion Del HTML</h2>
                 <p>
-                    Con esto concluimos la parte de HTML, si quieres puedes visitar 
+                    Con esto concluimos la parte de HTML, si quieres puedes visitar
                     los apartados de CSS, JS y mas.
                 </p>
                 <p><span class="final-content">&lt;/ &gt;</span></p>
@@ -2255,10 +2488,10 @@ span {
     <footer>
         <div class="footer-container">
             <div class="footer-contenido">
-                <div class="footer-logo">
+                <a class="footer-logo" href="../index.html"> <!--Contenedor de Logotipo-->
                     <img src="../iconos/logotipo.svg" alt="logo" class="footer-logotipo">
-                    <h2>B.D.C</h2>
-                </div>
+                    <h2><span>B.D.C</span></h2>
+                </a>
 
                 <nav class="footer-links">
                     <a href="../index.html">Inicio</a>

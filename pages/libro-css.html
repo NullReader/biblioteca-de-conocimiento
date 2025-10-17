@@ -11,33 +11,20 @@
 
 <body>
     <header>
-        <nav class="navbar">
-            <a href="../">
-                <div class="logo-container">
-                    <img class="logotipo" src="../iconos/logotipo.svg" alt="">
-                    <h1 class="titulo"><span>B.D.C</span></h1>
-                </div>
+        <nav class="navbar"> <!--Inicio del Nav-->
+            <a href="../index.html" class="logo-container">
+                <img class="logotipo" src="../iconos/logotipo.svg" alt="Logotipo B.D.C">
+                <h1 class="titulo"><span>B.D.C</span></h1>
             </a>
 
-            <div class="buscador">
+            <div class="buscador"> <!--Barra de busqueda-->
                 <form class="search-field" id="search" name="search" action="/buscar" method="get">
-                    <input class="search-input" type="text" placeholder="buscar...">
-                    <button class="search-button" type="submit">Buscar</button>
+                    <input class="search-input" type="text" placeholder="Buscar...">
+                    <button class="search-button" type="submit">🔍</button>
                 </form>
-
-                <button class="search-toggle" id="searchToggle">
-                    🔍
-                </button>
             </div>
 
-            <!-- Botón Hamburguesa -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <div class="nav-links">
+            <div class="nav-links"> <!--Links del Nav-->
                 <ul class="nav-list">
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="../pages/libro-html.html">HTML</a></li>
@@ -45,11 +32,15 @@
                     <li><a href="../pages/libro-js.html">JS</a></li>
                 </ul>
             </div>
-            <div class="invisible-box"></div>
+
+            <!-- Botón Hamburguesa -->
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
     </header>
 
-    <main>
+    <main> <!--Contenido Main-->
         <section class="classroom-container">
             <div class="classroom-content">
                 <h2>No Se Encontró Ningun Contenido</h2>
@@ -61,36 +52,38 @@
         </section>
     </main>
 
-    <footer>
+    <footer> <!--Inicio del Footer-->
         <div class="footer-container">
             <div class="footer-contenido">
-                <div class="footer-logo">
+                <a class="footer-logo" href="../index.html"> <!--Contenedor de Logotipo-->
                     <img src="../iconos/logotipo.svg" alt="logo" class="footer-logotipo">
-                    <h2>B.D.C</h2>
-                </div>
+                    <h2><span>B.D.C</span></h2>
+                </a>
 
-                <nav class="footer-links">
+                <nav class="footer-links"> <!--Links Nav Footer-->
                     <a href="../index.html">Inicio</a>
                     <a href="../pages/libro-html.html">HTML</a>
                     <a href="../pages/libro-css.html">CSS</a>
                     <a href="../pages/libro-js.html">JS</a>
                 </nav>
 
-                <div class="footer-social">
+                <div class="footer-social"> <!--Links externos-->
                     <a href="#" target="_blank">🐙 GitHub</a>
                     <a href="#" target="_blank">💼 LinkedIn</a>
                     <a href="#" target="_blank">✉️ Contacto</a>
                 </div>
             </div>
 
-            <div class="footer-copy">
+            <div class="footer-copy"> <!--Copyright-->
                 <p>Textito de copyright, porque si xd | © 2025 Biblioteca De Conocimiento</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts de la pagina -->
-    <script src="../js/scripts.js"></script>
+     <script src="../js/nav.js"></script>
+    <script src="../js/prism.js"></script>
+    <script src="../js/sala-de-codigo.js"></script>
 </body>
 
 </html>

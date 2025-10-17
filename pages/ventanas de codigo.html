@@ -54,7 +54,8 @@
                 </div>
 
                 <!--Solo Ventana De Comando-->
-                <div class="preview-container">
+                <div class="preview-container has-preview">
+                    <!-- Ventana de código -->
                     <div class="code-window">
                         <div class="code-header">
                             <span class="filename">index.html</span>
@@ -66,7 +67,9 @@
                             </button>
                         </div>
                         <div class="code-content">
-                            <pre><code class="language-html typewriter">
+                            <div class="code-scroll">
+                                <pre><code class="language-html typewriter html">
+&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
     &lt;head&gt;
         &lt;meta charset="UTF-8"&gt;&lt;/meta&gt;
@@ -74,10 +77,17 @@
         &lt;title&gt;Document&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        
+        &lt;a href="ejemplo.html" target="_blank"&gt;Botón&lt;/a&gt;
     &lt;body&gt;
 &lt;/html&gt;
-                            </code></pre>
+                                </code></pre>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
+
+                background {
+                    color: #ff436c;
+                }

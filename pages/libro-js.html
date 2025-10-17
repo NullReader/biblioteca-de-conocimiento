@@ -11,30 +11,18 @@
 
 <body>
     <header>
+        <header>
         <nav class="navbar">
-            <a href="../index.html">
-                <div class="logo-container">
-                    <img class="logotipo" src="../iconos/logotipo.svg" alt="">
-                    <h1 class="titulo"><span>B.D.C</span></h1>
-                </div>
+            <a href="../index.html" class="logo-container">
+                <img class="logotipo" src="../iconos/logotipo.svg" alt="Logotipo B.D.C">
+                <h1 class="titulo"><span>B.D.C</span></h1>
             </a>
 
             <div class="buscador">
                 <form class="search-field" id="search" name="search" action="/buscar" method="get">
                     <input class="search-input" type="text" placeholder="Buscar...">
-                    <button class="search-button" type="submit">Buscar</button>
+                    <button class="search-button" type="submit">🔍</button>
                 </form>
-
-                <button class="search-toggle" id="searchToggle">
-                    🔍
-                </button>
-            </div>
-
-            <!-- Botón Hamburguesa -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
             </div>
 
             <div class="nav-links">
@@ -45,7 +33,11 @@
                     <li><a href="#">JS</a></li>
                 </ul>
             </div>
-            <div class="invisible-box"></div>
+
+            <!-- Botón Hamburguesa -->
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
     </header>
 
@@ -64,10 +56,10 @@
     <footer>
         <div class="footer-container">
             <div class="footer-contenido">
-                <div class="footer-logo">
+                <a class="footer-logo" href="../index.html"> <!--Contenedor de Logotipo-->
                     <img src="../iconos/logotipo.svg" alt="logo" class="footer-logotipo">
-                    <h2>B.D.C</h2>
-                </div>
+                    <h2><span>B.D.C</span></h2>
+                </a>
 
                 <nav class="footer-links">
                     <a href="../index.html">Inicio</a>
@@ -90,9 +82,9 @@
     </footer>
 
     <!-- Scripts de la pagina -->
-    <script src="../js/scripts.js"></script>
+    <script src="../js/nav.js"></script>
     <script src="../js/prism.js"></script>
-    <script src="../js/maquina-de-escribir.js"></script>
+    <script src="../js/sala-de-codigo.js"></script>
 </body>
 
 </html>

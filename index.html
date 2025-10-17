@@ -11,33 +11,20 @@
 
 <body>
     <header>
-        <nav class="navbar">
-            <a href="#">
-                <div class="logo-container">
-                    <img class="logotipo" src="./iconos/logotipo.svg" alt="">
-                    <h1 class="titulo"><span>B.D.C</span></h1>
-                </div>
+        <nav class="navbar"> <!--Inicio del Nav-->
+            <a href="#" class="logo-container">
+                <img class="logotipo" src="./iconos/logotipo.svg" alt="Logotipo B.D.C">
+                <h1 class="titulo"><span>B.D.C</span></h1>
             </a>
 
-            <div class="buscador">
+            <div class="buscador"> <!--Barra de busqueda-->
                 <form class="search-field" id="search" name="search" action="/buscar" method="get">
                     <input class="search-input" type="text" placeholder="Buscar...">
-                    <button class="search-button" type="submit">Buscar</button>
+                    <button class="search-button" type="submit">🔍</button>
                 </form>
-
-                <button class="search-toggle" id="searchToggle">
-                    🔍
-                </button>
             </div>
 
-            <!-- Botón Hamburguesa -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <div class="nav-links">
+            <div class="nav-links"> <!--Links del Nav-->
                 <ul class="nav-list">
                     <li><a href="#">Inicio</a></li>
                     <li><a href="./pages/libro-html.html">HTML</a></li>
@@ -45,12 +32,17 @@
                     <li><a href="./pages/libro-js.html">JS</a></li>
                 </ul>
             </div>
-            <div class="invisible-box"></div>
+
+            <!-- Botón Hamburguesa -->
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
     </header>
 
+    <!--Contenido Main-->
     <main>
-        <section>
+        <section> <!--Carrusel-->
             <div class="carousel-container">
                 <div class="carousel">
                     <div class="carousel-inner" id="carousel">
@@ -97,7 +89,8 @@
                 <p>
                     Aquí encontrarás todo lo que voy aprendiendo sobre <strong>HTML</strong>,
                     <strong>CSS</strong> y <strong>JavaScript</strong>.
-                    Cada tema tiene explicaciones claras y ejemplos visuales para que te resulte mas sencillo de comprenderlas.
+                    Cada tema tiene explicaciones claras y ejemplos visuales para que te resulte mas sencillo de
+                    comprenderlas.
                 </p>
             </div>
         </section>
@@ -127,29 +120,29 @@
         </section>
     </main>
 
-    <footer>
+    <footer> <!--Inicio del Footer-->
         <div class="footer-container">
             <div class="footer-contenido">
-                <div class="footer-logo">
+                <a class="footer-logo" href="#"> <!--Contenedor de Logotipo-->
                     <img src="./iconos/logotipo.svg" alt="logo" class="footer-logotipo">
                     <h2><span>B.D.C</span></h2>
-                </div>
+                </a>
 
-                <nav class="footer-links">
+                <nav class="footer-links"> <!--Links Nav Footer-->
                     <a href="#">Inicio</a>
                     <a href="./pages/libro-html.html">HTML</a>
                     <a href="./pages/libro-css.html">CSS</a>
                     <a href="./pages/libro-js.html">JS</a>
                 </nav>
 
-                <div class="footer-social">
-                    <a href="#" target="_blank">🐙 GitHub</a>
-                    <a href="#" target="_blank">💼 LinkedIn</a>
-                    <a href="#" target="_blank">✉️ Contacto</a>
+                <div class="footer-social"> <!--Links externos-->
+                    <a href="#" target="_blank"><img src="./iconos/github.svg" alt="GitHub"> GitHub</a>
+                    <a href="#" target="_blank"><img src="./iconos/portafolio.svg" alt="Portafolio"> Portafolio</a>
+                    <a href="#" target="_blank"><img src="./iconos/mail.svg" alt="Mail"> Contacto</a>
                 </div>
             </div>
 
-            <div class="footer-copy">
+            <div class="footer-copy"> <!--Copyright-->
                 <p class="ej-n">Hecho con paciencia y café ☕ | © 2025 Biblioteca De Conocimiento</p>
             </div>
         </div>

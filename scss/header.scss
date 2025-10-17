@@ -1,168 +1,190 @@
 /* HEADER ========================================== */
 
-/* Barra De Navegacion ----------------------------- */
+/* === NAVBAR === */
+
+/* Contenedor --- */
 .navbar {
-    display: flex;
-    position: fixed;
-    justify-content: space-between;
-    align-items: center;
-    top: 0rem;
-    left: 1rem;
-    right: 1rem;
-    background-color: #ffffff21;
-    border-bottom: 2px solid #ffffff26;
-    filter: drop-shadow(0px 0px -3px #00000080);
-    width: auto;
-    height: auto;
-    min-height: 70px;
-    border-radius: 0 0 15px 15px;
-    backdrop-filter: blur(3px);
-    box-shadow: 0 4px 10px var(--shadow);
-    z-index: 1000;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 95%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  padding: 0.6rem 1.5rem;
+  z-index: 1000;
 }
 
-/* Caja Del Logotipo ----------------------------- */
+/* === LOGOTIPO === */
+
+/* contenedor --- */
 .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  justify-self: start;
 }
 
-/* Logotipo en si --- */
+/*logo img --- */
 .logotipo {
-    margin: 6px 8px;
-    width: 40px;
-    height: 40px;
-    transition: all 0.3s ease-in-out;
-    filter: invert(100%);
-    opacity: calc(70%);
+  width: 45px;
+  height: 45px;
+  filter: invert(100%);
+  opacity: 0.85;
+  transition: all 0.3s ease;
 
-    &:hover {
-        opacity: calc(100%);
-    }
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 }
 
-/* Titulo Del Logo --- */
+/*logo h1 --- */
 .titulo {
-    font-size: 60px;
-    font-family: "Tituloszz",sans-serif;
-    line-height: 1;
-    margin: 0;
-    display: inline-flex;
-    align-items: center;
-    height: 40px;
-    transition: all 0.3s ease-in-out;
-    color: #ffffff80;
+  font-family: "Tituloszz", sans-serif;
+  font-size: 3.8rem;
+  width: 35px;
+  height: 35px;
+  color: #ffffffcc;
+  transition: color 0.3s ease;
 
-    &:hover {
-        color: var(--blanco)
-    }
+  &:hover {
+    color:#fff;
+  }
 }
 
 .titulo span {
     position: relative;
-    top: 4px
+    top: -17px;
+    height: 0;
+    display: inline-block;
 }
 
-/* Links Del Nav ------------------------------- */
+/* ==== NAVEGACIÓN === */
 
+/*links container --- */
+.nav-links {
+  display: flex;
+  justify-self: end;
+}
+
+/*lista de lins --- */
 .nav-list {
-    display: flex;
-    margin-left: 5px;
-    list-style: none;
-    font-size: 22px;
-    color: #fdfdfdc0;
-    font-family: "linksN",sans-serif;
-    font-size: 50px;
-    margin: 0 40px 0 0;
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* li de links --- */
-.nav-list li {
-    margin: 0px 20px;
-    transition: all 0.3s ease-in-out;
+/*a en links --- */
+.nav-list li a {
+  text-decoration: none;
+  color: #ffffffb3;
+  font-family: "linksN", sans-serif;
+  font-size: 3.6rem;
+  position: relative;
+  transition: all 0.3s ease;
 
-    &:hover {
-        transform: scale(1.2);
-        color: var(--blanco)
-    }
+/*barra debajo ---*/
+  &::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
+  }
+
+  &:hover {
+    color:#fff;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 }
 
-/* Caja Del Buscador -------------------------- */
-
+/* ====== BUSCADOR ====== */
 .buscador {
-    display: flex;
-    flex: 1;
-    justify-content: center;
+  display: flex;
+  justify-self: center;
+  max-width: 800px;
 }
 
-/* Form Del Buscador --- */
 .search-field {
-    width: 100%;
-    max-width: 515px;
-    position: relative;
-    margin: 0 0 0 12px;
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
 }
 
-/* Input Del Buscador --- */
 .search-input {
-    width: 100%;
-    padding: 7px 12px;
-    padding-right: 70px;
-    border: 0;
-    border-radius: 20px;
-    color: #ffffff80;
-    background-color: color-mix(in srgb, var(--caja-v1) 10%, transparent);
-    box-shadow: 0 1px 4px var(--shadow), 4px 0px 12px #a84e4e;
-    font-size: 16px;
-    outline: none;
-    transition: all 0.25s ease-in-out;
-
-    &::placeholder {
-        color: #ffffff80;
-    }
-
-    &:focus {
-        outline: none;
-        box-shadow: 0 0 5px var(--shadow);
-    }
+  width: 100%;
+  padding: 8px 40px 8px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  outline: none;
 }
 
+.search-input::placeholder {
+  color: #ffffff99;
+}
 
-/* Boton Del Buscador ---*/
+.search-input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
 .search-button {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 5px 15px 5px 8px;
-    border: none;
-    color: #ffffff80;
-    background: transparent;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-    transform: translateY(-50%) scale(1.05);
-    color: var(--blanco);
-    }
-
-    &:active {
-    transform: translateY(-50%) scale(0.95);
-    text-shadow: none;
-}
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #ffffff99;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
 }
 
-
-/* Botón Oculto Del Buscador --- */
-.search-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-    color: var(--textos);
+.search-button:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: #fff;
 }
 
+/* ====== HAMBURGUESA ====== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  justify-self: end;
+}
 
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  filter: invert(100%);
+}

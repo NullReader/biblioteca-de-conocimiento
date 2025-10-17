@@ -24,9 +24,11 @@
 .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
+
 .hamburger.active span:nth-child(2) {
     opacity: 0;
 }
+
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
 }
@@ -36,61 +38,66 @@
     display: flex;
 }
 
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
+@media(max-width: 900px) {
+  .hamburger { display: flex; }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 1rem;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    border-radius: 16px;
+    background: rgba(255, 123, 100, 0.836);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.25);
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  .nav-links.active {
+    max-height: 420px;
+    opacity: 1;
+    padding: 1rem 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-list li { margin: 10px 0; }
+
+  .preview-container.has-preview {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
     }
 
-    .nav-links {
+    .code-window,
+.preview-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #1e1e1e79;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 360px;
+    width: 507px;
+    }
+
+    .search-field {
+        display: none;
+        /* oculto por defecto */
         position: absolute;
         top: 60px;
-        right: 1rem;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 20px var(--shadow);
-        padding: 0;
-        width: 200px;
-        
-        background-color: #ff694483;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(10px);
-
-        /* animación */
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transition: all 0.4s ease-in-out;
-    }
-
-    .nav-list {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-    }
-
-    .nav-list li {
-        margin: 10px 0;
-    }
-
-    .nav-links.active {
-        width: 200px;
-        padding: 52px 0;
-        max-height: 500px;
-        opacity: 1;
-    }
-}
-
-/* Responsive: <=480px */
-@media (max-width: 480px) {
-    .search-field {
-        display: none; /* oculto por defecto */
-        position: absolute;
-        top: 60px; /* debajo del navbar */
+        /* debajo del navbar */
         left: 1rem;
         right: 1rem;
         padding: 10px;
@@ -105,12 +112,197 @@
     }
 
     .search-toggle {
-        display: inline-block; /* solo aparece en móviles */
+        display: inline-block;
+        /* solo aparece en móviles */
     }
+
+    .footer-contenido {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "logo logo"
+      "links social";
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-logo {
+    grid-area: logo;
+    justify-self: center;
+  }
+
+  .footer-links {
+    grid-area: links;
+    justify-self: end;
+  }
+
+  .footer-social {
+    grid-area: social;
+    justify-self: start;
+  }
+
+  .footer-logo h2 {
+    font-size: 45px;
+  }
+}
+
+
+/* Responsive: <=480px */
+@media (max-width: 550px) {
+
+       .code-window,
+.preview-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #1e1e1e79;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 360px;
+    width: 380px;
+    }
+
+    code[class*=language-],
+pre[class*=language-] {
+    font-size: 0.9em;
+}
+
+.classroom-content h2 {
+    font-size: 36px;
+}
+
+.classroom-content h3 {
+    font-size: 31px;
+}
+
+.classroom-content p {
+    font-size: 19px;
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto; 
+    gap: 20px;
+    justify-items: center; 
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo {
+    grid-column: 2;
+    justify-self: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .footer-links {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-self: start;
+    gap: 8px;
+  }
+
+  .footer-social {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-self: end;
+    gap: 8px;
+  }
+
+ 
+  .footer-copy {
+    grid-column: 1 / 4;
+    grid-row: 2;
+    text-align: center;
+    font-size: 0.8rem;
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+
+.code-window,
+.preview-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #1e1e1e79;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 360px;
+    width: 310px;
+    }
+
+  .footer-contenido {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto;
+    gap: 15px;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 10px;
+  }
+
+  /* Logo centrado */
+  .footer-logo {
+    grid-column: 1;
+    justify-self: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .footer-logo h2 {
+    font-size: 28px;
+  }
+
+  .footer-links {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-social {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-social a img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .footer-copy {
+    grid-column: 1;
+    text-align: center;
+    font-size: 0.75rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 /* animación */
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to   { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
